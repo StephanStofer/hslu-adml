@@ -1,0 +1,14 @@
+jupyter==1.0.0
+numpy==1.18.5
+pandas==1.1.2
+pandas-profiling==2.9.0
+scikit-learn==0.23.2
+matplotlib==3.3.2
+seaborn==0.11.0
+mlxtend==0.17.3
+nltk==3.5
+scikit-image==0.17.2
+tqdm==4.50.0
+plotly==4.10.0
+scipy==1.5.2
+jupyter_contrib_nbextensions==0.5.1

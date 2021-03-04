@@ -1,0 +1,6 @@
+bin/
+etc/
+images/
+lib/
+*.cfg
+share/

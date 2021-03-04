@@ -1,0 +1,33 @@
+---
+documentclass: scrreprt
+lang: de
+papersize: a4
+geometry:
+- left=2cm
+- right=2cm
+- top=2cm
+- bottom=3cm
+numbersections: true
+title: Advanced Machine Learning
+subtitle: Zusammenfassung
+author: Stephan Stofer
+date: \today
+toc: true
+lof: true
+linkcolor: blue
+toccolor: blue
+mainfont: Baskerville
+sansfont: Didot
+monofont: Inconsolatazi4
+fontsize: 11pt
+dpi: 124
+header-includes:
+      - |
+        ``` {=latex}
+        \let\originAlParaGraph\paragraph
+        \renewcommand{\paragraph}[1]{\originAlParaGraph{#1} \hfill}
+        ```
+output:
+  pdf_document:
+    extra_dependencies: ["flafter"]
+---
