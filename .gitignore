@@ -4,3 +4,4 @@ images/
 lib/
 *.cfg
 share/
+.idea
