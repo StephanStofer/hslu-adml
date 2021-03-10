@@ -1,4 +1,4 @@
-PARAMS=--pdf-engine=xelatex --metadata-file=$(OPTIONS) --resource-path=$(SEARCHPATH)
+PARAMS=--pdf-engine=xelatex --metadata-file=$(OPTIONS) --resource-path=.:notes:$(SEARCHPATH)
 OPTIONS=document_options.yaml
 OUTPUT=Zusammenfassung_ADML_F21
 INPUT=notes/*.md

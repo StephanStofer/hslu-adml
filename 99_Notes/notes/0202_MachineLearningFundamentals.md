@@ -7,7 +7,7 @@ Ein Vektor Space Model enthält nur numerische Daten (ausser dem Key). Zum Über
 ## Data Records
 Beinahe alle ML-Verfahren setzen ein *VSM* voraus. Wenn alle Daten als nummersiche Werte voriegen, kann eine jede Zelle als Spalte interpretiert werden.
 
-![Geometrische Interpretation von Daten](vsm_geometricInterpretation.png){width=80%}
+![Geometrische Interpretation von Daten](images/vsm_geometricInterpretation.png){width=80%}
 
 Die Länge der roten Linie kann mit Hilfe von $\sqrt{a^2+b^2}$ berechnet werden und als Distanz interpretieret werden.
 
