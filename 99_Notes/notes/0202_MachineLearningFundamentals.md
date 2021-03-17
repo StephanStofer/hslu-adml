@@ -115,3 +115,4 @@ Der Wert von $k$ wird Hyperparameter genannt und entspricht der Anzahl Nachbarn.
 * Mehrheitswahl bedeutet alle Nachbarn sind gleich stimmberechtigt, egal wie weit sie entfernt liegen
 * Alternativ kann per Parameter die Distanz berücksichtigt werden $\frac{1}{d}$ mit $d =\text{distance} > 0$
 * benötigt am wenigsten Daten, reichen Daten nicht aus, gibt es keine Möglichkeit für ML
+* $k$ ist sogenannter Hyperparameter

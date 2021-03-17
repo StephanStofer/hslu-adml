@@ -5,6 +5,10 @@ von Machine Learnung zu erreichen. Kurz, wir möchten es für die Algorithmen ei
 
 ![Feature Engineering](images/feature_engineering.png){width=70%}
 
+Kann die Performance der ML-Algos verbessern. Domänenexperten können mit Fachwissen helfen,
+nützliche Features zu extrahieren. In modernen DL-Ansätzen werden Feature *gelernt* und nicht
+engineered.
+
 ## Data
 
 Als Menschen können wir sehr schnell aus einem Datenset eine Klassifizierung machen, indem wir ihre
@@ -236,7 +240,7 @@ Konversation.
 Es gibt etwa 6000 Sprachen und enthält Mehrdeutigkeiten und Redundanzen. Ausserdem ist sie
 Kontextrelevant und viele Wörter sind sehr rar.
 
-![Features of Language and Text](image/textfeatures.png){width=50%}
+![Features of Language and Text](images/textfeatures.png){width=50%}
 
 * Morphology = Stammworte
 
@@ -253,7 +257,8 @@ Text für ML vorbereiten um *Semantic Language Task* (Sprechen) erreichen zu kö
 
 ### Text Vectorization
 
-Text wird mit statistischen Features untersucht und nummersich dargestellt. Dies hat einige Vorteile.
+Text wird mit statistischen Features untersucht und nummersich dargestellt. Dies hat einige
+Vorteile.
 
 * Vektorisiert kann der Text algorithmisch verarbeitet werden
 * besitzt so ein Distanzmass (z.B. Euklidische Distanz)
@@ -277,9 +282,17 @@ immer noch spärliche Repräsentation. Ausserdem geht die Ordungen der Worte ver
 ![Bag-of-Words](images/bag-of-words.png){width=40%}
 
 #### Term Frequency-Inverse Document Frequency (TF-IDF)
-Verbreitet genutzer Textvektorisierung Algorithmus. Setzt sich aus zwei Berechnungen zusammen. Die *Term Frequency* gibt an wie oft ein Wort im Vergleich aller Worte im gleichen Dokument vorkommt $TF = \frac{w}{d}$. Mit $k$ Dokumenten gibt es Worte die sehr häufig vorkommen zum Beispiel «und». Diese sollten bestraft werden. Dazu wird der *Inverse Document Frequency* (IDF) verwendet. Die Document Frequency ist das Verhältnis zwischen $k$ Dokumenten welche das Wort $w$ enthalten. Davon das Inverse $IDF=\frac{1}{\frac{k}{w}}$. Um nun den TF-IDF zu erhalten müssen beide Werte multipliziert werden. Um *Schiefe* auszugleichen sollte erst der $log(IDF)$ gezogen werden.  
 
-![TF-IDF](images/tf-idf.png){width=60%} 
+Verbreitet genutzer Textvektorisierung Algorithmus. Setzt sich aus zwei Berechnungen zusammen. Die *
+Term Frequency* gibt an wie oft ein Wort im Vergleich aller Worte im gleichen Dokument vorkommt $TF
+= \frac{w}{d}$. Mit $k$ Dokumenten gibt es Worte die sehr häufig vorkommen zum Beispiel «und». Diese
+sollten bestraft werden. Dazu wird der *Inverse Document Frequency* (IDF) verwendet. Die Document
+Frequency ist das Verhältnis zwischen $k$ Dokumenten welche das Wort $w$ enthalten. Davon das
+Inverse $IDF=\frac{1}{\frac{k}{w}}$. Um nun den TF-IDF zu erhalten müssen beide Werte multipliziert
+werden. Um *Schiefe* auszugleichen sollte erst der $log(IDF)$ gezogen werden.
+
+![TF-IDF](images/tf-idf.png){width=60%}
 
 ### Modern ML Methods
+
 Gehen einen Schritt weiter und lernen die wichtigen Features von Text aus grossen Datensets.
