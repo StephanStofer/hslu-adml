@@ -71,8 +71,14 @@ Dieser Workflow funktioniert nur, wenn wir viele Daten haben (wir splitten) und 
 
 ![Einfacher Machine Learning Workflow](ml-workflow.png){width=70%}
 
+weiteres Beispiel
+
+![Standard Workflow Supervised Learning](images/workflowsupervisedlearning.png){width=60%}
+
 ### Hyperparamters
 Hyperparameter bilden die manuelle Konfigration eines ML-Models und sind je nach Modell sehr verschieden. Als Beispiel Anzahl $k$ Nachbarn bei k-NN oder Grad des Polynomials für Regressions Modelle. Als Engineer müssen wir die besten Hyperparameter aussuchen, welche auf ungesehenen Daten am besten performt. Ein simpler Train-Test split funktioniert da leider nicht.
+
+Parameter hingegen sind optimierbare Gewichte im System die automatisch optimiert werden können (zb. mit [Gradient Descent][]).
 
 #### How to get Fired as Data Scientist
 Beim Vergleich von Hyperparameter darf die Aussage, wie Genau das Modell performen wird nur dann tätigen, wenn es *truley unseen* Daten sind (sobald einmal verwendet sind sie nicht mehr unseen).
@@ -97,3 +103,5 @@ Wenn wir zu wenig Daten haben um 60/20/20 zu teilen, kann das $K-Fold$-Prinzip a
 ![10-Fold Cross-Validation\label{kfold}](k-fold.png){width=60%}
 
 Die 80% Daten werden in $k$ Teil unterteilt. Das Training wird jeweils auf $k-1$ Teile ausgeführt und validiert. Nach jeder Runde wird ein anderes Validierungs- und Trainingsset verwendet. Die Gesamtgenauigkeit ergibt sich aus dem Durchschnitt der Genauigkeit aller Runden. Wird mittlerweile auch dann verwendet, wenn sehr sehr viele Daten vorhanden wären. Grund ist, dass wir aus diesem Verfahren stabile Aussage erhalten oder wenn Training sehr, sehr rechenintensiv.
+
+![ValidationWorkflowSupervisedLearning](images/ValidationWorkflowSupervisedLearning.png){width=60%}
