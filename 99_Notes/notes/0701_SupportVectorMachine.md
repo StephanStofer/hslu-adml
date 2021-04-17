@@ -15,7 +15,7 @@ Unsicherheit in Daten. Z.B. ein Messgerät ist nicht immer gleich genau. Sie hab
 Unschärfe. Wenn nun eine Entscheidungsgrenze sehr nahe an Punkten anliegt, könnte es sein dass die
 Unschärfe dazu führt, dass ein Punkte die Grenze überschreiten würde.
 
-![Uncertainty in Data](images/uncertainity-in-data.png){width=30%}
+![Uncertainty in Data](images/uncertainity-in-data.png){width=40%}
 
 ### Large Margin Classifier
 
@@ -62,14 +62,14 @@ Sofern $\vec{x}$ und $\vec{y}$ nicht trivial (nicht null) sind, gilt
 
 $$\vec{x} \cdot \vec{y} = ||\vec{x}|| * ||\vec{y}|| * cos(\theta)$$
 
-![Vector Triangles](images/vector-triangles.png){width=30%}
+![Vector Triangles](images/vector-triangles.png){width=40%}
 
 #### Scalar Product as Projection
 
 Wenn $\vec{y}$ ein Einheitsvektor ist, entspricht das Skalarprodukt $\vec{x} \cdot \vec{y}$ der *
 Projektion* von $\vec{x}$ auf $\vec{y}$
 
-![Scalar Product as Projection](images/scalarasprojection.png){width=30%}
+![Scalar Product as Projection](images/scalarasprojection.png){width=40%}
 
 #### Perpendicularity Test
 
@@ -83,21 +83,21 @@ fordern von $w$, dass er ein Einheitsvektor entspricht und rechtwinklig zur Eben
 
 ### Hessian Normal Form
 
-![Hessian Normal Form](images/hessiannormalform.png){width=30%}
+![Hessian Normal Form](images/hessiannormalform.png){width=40%}
 
-![Example Hessian Normal Form](images/hessiannormalformexample.png){width=30%}
+![Example Hessian Normal Form](images/hessiannormalformexample.png){width=40%}
 
-![Distanz Hessian Normal Form](images/hessiannormalformdistance.png){width=30%}
+![Distanz Hessian Normal Form](images/hessiannormalformdistance.png){width=40%}
 
-![Bias and Offset](images/biasandoffset.png){width=30%}
+![Bias and Offset](images/biasandoffset.png){width=40%}
 
 ### Shifting the Coordinate System
 
 Vektoren müssen nicht verschoben werden, weil die keine Position haben
 
-![Shifting the Coordinate System](images/shifitingcoordinatesystem.png){width=30%}
+![Shifting the Coordinate System](images/shifitingcoordinatesystem.png){width=40%}
 
-![Distance to Hyperplane Point Q](images/hessiandistancetoq.png){width=30%}
+![Distance to Hyperplane Point Q](images/hessiandistancetoq.png){width=40%}
 
 ### How to interpret signed Distances
 
@@ -105,9 +105,9 @@ Eine Hyperebene teilt einen Raum in einen postiven und negativen Halbraum (+/-HP
 Convention zeigt der Vektor $\vec{w}$ immer in die Richtung von -HP! Die Punkte in +HP haben eine
 positivee Distanz und die Punkte in -HP eine negative Distanz zur Hyperebene.
 
-![Signed Distances](images/SignedDistances.png){width=30%}
+![Signed Distances](images/SignedDistances.png){width=40%}
 
-![Example Signed Distances](images/SignedDistancesexample.png){width=30%}
+![Example Signed Distances](images/SignedDistancesexample.png){width=40%}
 
 ## Large Margin Classifier
 
@@ -115,12 +115,12 @@ In der binären Klassifizierung wählen wir für die Labels die Werte 0 und 1. B
 Machines codieren die *labels* mit -1 und +1. Dies ist nur eine Namengebung, abere dadurch ergibt
 sich eine elegantee Formulierung.
 
-![Label Encoding](images/labelencoding.png){width=30%}
+![Label Encoding](images/labelencoding.png){width=40%}
 
 Die Hyperebene teilt lediglich die beiden Punktefamilien. Weil wir aber eine Distanz wollen, führen
 wir ein $M=1$ ein und kontrollieren lediglich die Skalierung.
 
-![Introduction the Margin](images/intromargin.png){width=30%}
+![Introduction the Margin](images/intromargin.png){width=40%}
 
 ### Controlling the Margin
 
@@ -129,7 +129,7 @@ vergrössert oder verkleinert sich der Margin. Mit dieser Skalierung von $\vec{w
 kontrolliert werden. Die Bedingung bleibt immer gleich, nämlich $+-1$, jedoch verändern wir so die
 «Einheit» des Abstandes (mm, cm, m, km)
 
-![Controlling the Margin\label{redline}](images/controllingmargin.png){width=30%}
+![Controlling the Margin\label{redline}](images/controllingmargin.png){width=40%}
 
 ### Elegant Problem Formulation
 
@@ -137,7 +137,7 @@ Weil wir im obigen Fall eine Fallunterscheidung haben (if/else), ergäbe sich ei
 Formulierung für die Optimierung. Weil wir die Labels +1 und -1 verwendene, können wir die Labels in
 die Formel reinmultiplizieren und erreichen damit eine allgemein gültige Bedigungung (Constraint).
 
-![Elegant Problem Formulation\label{class}](images/class1-1.png){width=30%}
+![Elegant Problem Formulation\label{class}](images/class1-1.png){width=40%}
 
 ### How Big is the Margin
 
@@ -153,12 +153,16 @@ Forderungen
 1. Datenpunkte müssen auf richter Seite klassifiziert sein
 1. Margin muss maximiert sein
 
-//todo. add some text here
+Anstatt $\frac{2}{||w||}$ zu maximieren, können wir auch einfach $||w||$ minimieren, oder noch besser
+$\frac{1}{2}*||w||^2 = \frac{1}{2}w \dot w$. Es ist eine Minimierung unter Constraints, welches ein
+quadratisches Optimierungsproblem ist.
+
+Diese Variante ist anfällig auf Overfitting, weil eine Linie gefunden werden muss.
 
 Entspricht einem *Hard Margin Classifier* mit welchem ein Binäres Klassifizierungsproblem gelöst
 werden kann.
 
-![Hard Margin Classifier](images/hardmarginclassifier.png){width=30%}
+![Hard Margin Classifier](images/hardmarginclassifier.png){width=40%}
 
 ## Soft Margin Classifier
 
@@ -173,7 +177,7 @@ sehen wir dass der Graue neue Punkt eher zur Mehrheit der roten Punkte passen w�
 harten Grenze zu blau zugeordnet wird. Das Model ist also overfittet und generalisiert zu wenig auf
 unseen Data.
 
-![Outlier Sensitivity\label{sensitivityoutlier}](images/outliersensitivity.png){width=30%}
+![Outlier Sensitivity\label{sensitivityoutlier}](images/outliersensitivity.png){width=40%}
 
 ### Soft Margin Classifier
 
@@ -182,7 +186,7 @@ Trade-off zwischen besserer Generalisierung auf *unseen* Data, entgegeen der Kla
 zu Trainingsdaten. Es muss die Überlegung gemacht werden noch mehr Punkte zu ignorieren. Dazu
 Cross-Validation nutzen!
 
-![Soft Margin Classifier\label{classificationerror}](images/classificationerror.png){width=30%}
+![Soft Margin Classifier\label{classificationerror}](images/classificationerror.png){width=40%}
 
 ### Slack Variables
 
@@ -191,7 +195,7 @@ von der Margin abweichen darf. Der Hyper-Parameter $C$ in \ref{slackvariable} ka
 ob ein eher engerer Margin schlimmer ist oder mehr Verletzungen in den Trainingsdaten erlaubt sind.
 Evalutation von $C$ via Cross-Validation.
 
-![Slack Variables\label{slackvariable}](images/slackvariable.png){width=30%}
+![Slack Variables\label{slackvariable}](images/slackvariable.png){width=40%}
 
 ### Regularization Parameter
 
@@ -207,7 +211,7 @@ Es ist immer noch ein quadratisches Optimierungsproblem mit eindeutigen Minimum.
 Trade-Off zwischen Trainingsfehler und Margin, kontrollierbar via Hyper-Parameter $C$. Bester
 Trade-Off via Cross-Validation für $C$ finden.
 
-![Unconstrained Optimization Problem](images/unconstrainedoptimizationproblem.png){width=30%}
+![Unconstrained Optimization Problem](images/unconstrainedoptimizationproblem.png){width=40%}
 
 ## Kernel
 
@@ -245,11 +249,11 @@ Skalarprodukt, addiert Konstante $r$ und rechnet das Ganze hoch $d$ $$(\vec{x} \
 * $r$ = Koeffizient
 * $d$ = Grad des Polynoms
 
-![Example Polynomial Kernel](images/polykernel.png){width=30%}
+![Example Polynomial Kernel](images/polykernel.png){width=40%}
 
-![2. Example Polynomial Kernel](images/polykernel2.png){width=30%}
+![2. Example Polynomial Kernel](images/polykernel2.png){width=40%}
 
-![3. Example Polynomial Kernel](images/polykernel3.png){width=30%}
+![3. Example Polynomial Kernel](images/polykernel3.png){width=40%}
 
 Output des Kernel ist das Skalarprodukt der beiden Koordinaten
 
@@ -263,7 +267,7 @@ Distanz zu einem Trainingspunkt, desto mehr Einfluss auf die Klassifizierung. $$
 Das Gamma entspricht einem exponetiellen Decay (Verfall) der
 skalierten [Euclidiean Distance or $L^2$-Norm][] zwischen $\vec{x} \text{und} \vec{y}$
 
-![Example RBF Kernel\label{rbfkernel}](images/rbfkernel.png){width=30%}
+![Example RBF Kernel\label{rbfkernel}](images/rbfkernel.png){width=40%}
 
 $f$ in ref{rbfkernel} enspricht der Ableitung. Die Taylorentwicklung ist eine unedliche lange
 Approximation von $e^{xy}$
@@ -280,20 +284,20 @@ Lagrange Methode*.
 
 Siehe auch IMATH-stuff.
 
-![Lagrange Method](images/lagrangemethod.png){width=30%}
+![Lagrange Method](images/lagrangemethod.png){width=40%}
 
 ### Lagrange Transformation
 
 Wir berechnen die partiellen Ableitungen mit $w$, $b$ und $a_i$. Eine Einschränkung ist, dass alle
 partiellen Ableitung gleich null sind.
 
-![Lagrange Transformation](images/lagrangetransformation.png){width=30%}
+![Lagrange Transformation](images/lagrangetransformation.png){width=40%}
 
-![Partial Dereivatives of Lagrange Formulation](images/partiallagrange.png){width=30%}
+![Partial Dereivatives of Lagrange Formulation](images/partiallagrange.png){width=40%}
 
-![Towards the Dual Problem Formulation](images/partiallagrange2.png){width=30%}
+![Towards the Dual Problem Formulation](images/partiallagrange2.png){width=40%}
 
-![Dual Problem Formulation\label{kernelsvm}](images/partiallagrange3.png){width=30%}
+![Dual Problem Formulation\label{kernelsvm}](images/partiallagrange3.png){width=40%}
 
 ### Kernel Hard-Margin SVM
 
@@ -303,20 +307,20 @@ die Lagrange Dual Funktion. Zur Klassifizierungszeit verwenden wir
 
 $K$ entspricht einem Kernel. Das Resultat ist eine Zahl (Similarität im höheren Raum).
 
-![Kernel Hard-Margin SVM](images/kernelhardmarginsvm.png){width=30%}
+![Kernel Hard-Margin SVM](images/kernelhardmarginsvm.png){width=40%}
 
 Zur Klassifizierungszeit wird der Karsupel nicht mehr benötigt.
 
-![Kernel Hard-Margin SVM at Classification Time](images/classtime.png){width=30%}
+![Kernel Hard-Margin SVM at Classification Time](images/classtime.png){width=40%}
 
 ### API Check
 
-siehe `sklearn.svm.SVC`
+`sklearn.svm.SVC(*, C=1.0, kernel='rbf', degree=3, gamma='scale', coef0=0.0,...)`
 
-* Cistheregularizationparameter
-* kernelchoice(linear,poly,rbf,...)
-* degreeisthedegreedofpolynomialkernel
-* gammaistheRBFkernelcoefficient
-* coef0isthecoefficientrofpolynomialkernel
+* C is the regularization parameter
+* kernel choice (linear, poly, rbf, ...)
+* degree is the degree d of polynomial kernel
+* gamma is the RBF kernel coefficient
+* coef0 is the coefficient r of polynomial kernel
 
-[https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html][]
+[https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html][siehe online]
