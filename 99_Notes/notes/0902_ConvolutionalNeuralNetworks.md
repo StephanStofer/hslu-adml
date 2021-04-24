@@ -117,4 +117,3 @@ Reihenfolge nach Schwierigkeit links oben, rechts oben, links unten, recht unten
 Bei Segmentierung wird jeder Pixelpunkt zugeordnet.
 
 ![The Big Picture of CNN](images/cvd.png){width=50%}
-
