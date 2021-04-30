@@ -6,3 +6,4 @@ lib/
 share/
 .idea
 .ipynb_checkpoints
+data/*.png
