@@ -7,3 +7,6 @@ share/
 .idea
 .ipynb_checkpoints
 data/*.png
+*.bin
+*.gz
+*.h5
