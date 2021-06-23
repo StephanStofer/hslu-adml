@@ -151,13 +151,13 @@ learning* verwendet werden, weil globale min/max nicht bekannt sind.
 Die Daten werden so transformiert, dass der Mittelwert 0 ist und die Standardabweichung 1.
 $$x\mapsto\frac{x-\mu_X}{\sigma_X}$$ Kann für supervised und unsupervised learning verwendet werden.
 Der Nachteil ist die fehlende Prozentinterpretation. Kann zu negativen Werten führen (negative
-Preise oder Anzahl von etwas). Zur Interpretation müsste zurücktransformiert werden.
+Preise oder Anzahl). Zur Interpretation müsste zurücktransformiert werden.
 
 ## Normalization Parameters
 
 Bei Min/Max Normalisation werden (min/max) benötigt, beim Z-Score (mean, std). Wichtig, Parameter
-aus Trainings-Daten bestimmen (nicht Testdaten), Min/Max nicht für supervised learning verwenden (
-ausser Daten enthalten globale Min/Max). Nomalisierten Parameter speichern um später zu Skalieren.
+aus Trainingsdaten bestimmen (nicht Testdaten), Min/Max nicht für supervised learning verwenden (
+ausser Daten enthalten globale Min/Max). Normalisierten Parameter speichern um später zu skalieren.
 
 ```python
 import pandas as pd
@@ -188,11 +188,11 @@ df[df.columns] = scaler.inverse_transform(df) print(df.head())
 ## K-Nearest Neighbors Classification (k-NN)
 
 Ist wahrscheinlich der einfachste ML-A. Ist ein Verfahren für Regression und Klassifizierung. Zeigt
-auf, wie wichtig Distanz bzw. Similarität für ML ist.K-Nearest Neighbors muss ein von Hand
-definierten Parameter $k$ mitgegeben werden. $k=3$ bedeutet, dass K-Nearest die drei nächsten Punkte
-suchen und die Klassifikation eines neuen Punkts anhand deren Eigenschaften klassifiziert wird. k-NN
-mit $k=1$ wird einfach das Labels des nahesten Punktes übernommen. Bei $k>1$ wird ein
-mehrheitsvoting gegenüber den $k$-nahesten Punkte gemacht.
+auf, wie wichtig Distanz bzw. Similarität für ML ist. K-Nearest Neighbors muss ein 
+definierter Parameter $k$ mitgegeben werden. $k=3$ bedeutet, dass K-Nearest die drei nächsten Punkte
+zu einem neuen Punkt sucht und anhand deren Eigenschaften klassifiziert wird. k-NN
+mit $k=1$ wird einfach das Label des nahesten Punktes übernommen. Bei $k>1$ wird ein
+Mehrheitsvoting gegenüber den $k$-nahesten Punkte gemacht.
 
 ![K-Nearest Neighbors Classification](knn-classification.png){width=80%}
 
@@ -206,17 +206,17 @@ Punkte. Funktionsweise mit Parameter $k$ analog k-NN-Klassifizierung.
 ## Hyperparameter
 
 Der Wert von $k$ wird Hyperparameter genannt und entspricht der Anzahl Nachbarn. Das Resultat kann
-stark vom gewählten $k$ differieren. Es ist also wichtig dieses möglichst optimal zu wählen (es gibt
-keine Optimierungsmöglichkeit durch einen Compi). Als weiteren Paramter kann die
-Distanz/Similaritätswert übergeben werden.
+stark vom gewählten $k$ differieren. Es ist also wichtig, dieses möglichst optimal zu wählen (es gibt
+keine Optimierungsmöglichkeit durch einen Computer). Als weiteren Paramter kann eine Konstante zur 
+Distanz-/Similaritätmethode übergeben werden.
 
 ## Facts on K-Nearest Neighbors
 
-* Sehr langsam, weil jedesmal Similarität zu allen Punkten berechnet und dann die Distanz berechnet
-  und nahesten ausgewählt. Dies wird bei jedem Datenpunkt gemacht
-* Für kleine Dataset gute Baseline, legt Massstäbe fest für andere Algos
+* Sehr langsam, weil jedesmal Similarität zu allen Punkten berechnet wird. Danach die Distanz berechnet
+  und nahesten ausgewählt. Dies wird bei jedem Datenpunkt gemacht.
+* Für kleines Dataset gute Baseline, legt Massstäbe fest für andere Algos
 * Mehrheitswahl bedeutet alle Nachbarn sind gleich stimmberechtigt, egal wie weit sie entfernt
-  liegen
+  liegen.
 * Alternativ kann per Parameter die Distanz berücksichtigt werden $\frac{1}{d}$ mit $d
   =\text{distance} > 0$
 * benötigt am wenigsten Daten, reichen Daten nicht aus, gibt es keine Möglichkeit für ML
