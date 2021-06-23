@@ -91,7 +91,7 @@ nicht auf neuen Daten anwenden).
 Unwidersprüchliche Daten können perfekt approximiert werden (Interpolationstheorem). Für $m$
 verschiedene Datenpunkt ergibt ein Polynom mit Grad $m-1$.
 
-![Vergleich Overfit vs. weiche Approximation](perfect-percormance.png){width=90%}
+![Vergleich Overfit vs. weiche Approximation](images/perfect-percormance.png){width=90%}
 
 Model soll *Tendez* der Daten und nicht die Trainingsdaten auswendig lernen.
 
@@ -105,7 +105,7 @@ verwendet werden. Beim Vergleich von Modellen darf dies nicht angewandt werden.
 1. Regressionsmodell auf Trainingsdaten trainieren
 1. Evaluation auf dem Testset um Performance schätzen
 
-![Einfacher Machine Learning Workflow](ml-workflow.png){width=70%}
+![Einfacher Machine Learning Workflow](images/ml-workflow.png){width=70%}
 
 weiteres Beispiel
 
@@ -142,7 +142,7 @@ und Validationsdaten
 Ist man unzufrieden, braucht man neue Daten. Man darf keine Änderung am Modell vornehmen, ohne neue
 Daten zur Hand zu haben. Dieser Workflow benötigt viele Daten.
 
-![Evaluation Workflow Hyperparameter Optimization](eva-workflow-hyperparam-opt.png){width=60%}
+![Evaluation Workflow Hyperparameter Optimization](images/eva-workflow-hyperparam-opt.png){width=60%}
 
 ### K-Fold Cross-Validation
 
@@ -150,7 +150,7 @@ Wenn wir zu wenig Daten haben um auf 60/20/20 zu teilen, kann das $K-Fold$-Prinz
 teilt die Trainings- und Testdaten in 80/20 auf. Die Testdaten wegsperren. Auf den 80% der Daten
 wird die *K-Fold Cross Validation* gemäss Abbildung \ref{kfold} ausgeführt.
 
-![10-Fold Cross-Validation\label{kfold}](k-fold.png){width=60%}
+![10-Fold Cross-Validation\label{kfold}](images/k-fold.png){width=60%}
 
 Die 80% Daten werden in $k$-Teile unterteilt. Das Training wird jeweils auf $k-1$ Teile ausgeführt
 und validiert. Nach jeder Runde wird ein anderes Validierungs- und Trainingsset verwendet. Die
