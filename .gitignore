@@ -10,3 +10,7 @@ data/*.png
 *.bin
 *.gz
 *.h5
+*.aux
+*.lof
+*.log
+*.toc
