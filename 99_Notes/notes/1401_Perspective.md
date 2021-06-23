@@ -4,12 +4,12 @@ Blick auf ML aus höherer Flughöhe.
 
 ## Challenges in AI and Machine Learning
 
-Die AI ist immer auf ein speziellalisiertes Feld (Mikroumgebung mit harten Regeln) konzentriert.
-Diese als grossese Ganzen zusammenzufassen, in einem einzelnen zusammenzufassen ist sehr schwierig.
-Weiter sind einfache Sachen schwierig für die ML und umgekehrt (Box heben/Schach spielen).
+Die AI ist immer auf ein spezialisiertes Feld (Mikroumgebung mit harten Regeln) konzentriert. Diese
+als grosses Ganzen, in einem Einzelnen zusammenzufassen, ist sehr schwierig. Weiter sind einfache
+Sachen schwierig für die ML und umgekehrt (Box heben/Schach spielen).
 
-Intelligenez ist nicht nur im Hirn sondern auch alle anderen kognitiven Sinne und lernt auch durch
-Experimente und Interaktionen mit der Umwelt.
+Intelligenez ist nicht nur im Hirn, sondern auch alle anderen kognitiven Sinne tragen dazu bei. Man
+lernt auch durch Experimente und Interaktionen mit der Umwelt.
 
 ### Beware of the Hype
 
@@ -19,29 +19,29 @@ alles lösen und können nur spezifisch eingesetzt werden.
 Das fehlen von Diversität in den Daten ist ein reales Problem. Weiter ist es bisher wenig reguliert,
 wird aber zunehmen in den nächsten Jahren.
 
-Das misbrauchen von ML kann die Demokratie untermaueren. Zum Beipsiel das publizieren von Fake
-News/Videos/Bilder in Social Media Kanäle kann Wahlen negativ beinflussen und führt zu
+Das missbrauchen von ML kann die Demokratie untermaueren. Zum Beipsiel das publizieren von Fake
+News/Videos/Bilder in Social Media Kanäle. Dies kann Wahlen negativ beinflussen und führt zu
 Organisationen wie QAnon.
 
 ## Exciting Research Areas
 
-* Explainable AI (XAI): Da wir nicht wissen wie DL-Netze entschieden haben ist es sehr schwierig zu
-  exklären odere Gründe für einen entscheid abzugeben. Weshalb es oft ein Hindernis in sensitiven
+* Explainable AI (XAI): Da wir nicht wissen wie DL-Netze entschieden haben, ist es sehr schwierig zu
+  exklären oder Gründe für einen Entscheid abzugeben. Weshalb es oft ein Hindernis in sensitiven
   Gebieten (Medizin/Recht) darstellt.
-* Data-Centric AI: Ide dahinetre ist es nicht nur das Model/Algorithmus zu verbessern (f1-Score),
+* Data-Centric AI: Idee dahinter ist es nicht nur das Model/Algorithmus zu verbessern (f1-Score),
   sondern die Daten mehr in den Fokus zu stellen und da ansetzen.
 * Neuro-Symbolic AI: Regelbasierte AI (if/else/then)
-* Transformer Networks: besonders im Bereich NLP wo der Fokus auf einer Aufmerksamkeit beruht (
+* Transformer Networks: Besonders im Bereich NLP wo der Fokus auf einer Aufmerksamkeit beruht (
   merken wo was war), hob NLP auf ein neues Level
-* Custom Silicon for AI+ML: GPUs sind nicht optimieret für AI workload, sie wurde nur von dere AI
-  Community adoptiert (wegen MAtrix Operationen). Eigene Hardware wird dafür entwickeln werden.
-* Artificial Creativity: Kunst kreiert durhc AI
+* Custom Silicon for AI+ML: GPUs sind nicht optimiert für AI workload, sie wurde nur von der AI
+  Community adoptiert (wegen Matrix Operationen). Eigene Hardware wird dafür entwickelt werden.
+* Artificial Creativity: Kunst kreiert durch AI
 
 ![Hype Cycle for AI](images/hypecycle.png){width=80%}
 
 ## Longer Term Outlook
 
-Die *Artificial General Intelligence (AGI)* beudeutet, dass schwierige menschliche Aufgaben
+Die *Artificial General Intelligence (AGI)* bedeutet, dass sie schwierige menschliche Aufgaben
 erledigen kann (Kaffee machen, Fussball spielen).
 
 ![Artificial General Intelligence](images/agi.png){width=80%}
@@ -62,5 +62,5 @@ Neurallinks womit Geräte durch Gedanken gesteuert werden können.
 
 ### IA: Intelligence Augmentation
 
-Menschen und AI performen zusammen viel bessere als zusammen. Das paradigm verschiebt sich von AI zu
+Menschen und AI performen zusammen viel besser als alleine. Das Paradigma verschiebt sich von AI zu
 IA.

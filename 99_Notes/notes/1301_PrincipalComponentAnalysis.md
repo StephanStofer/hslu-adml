@@ -1,57 +1,57 @@
 # Principal Component Analysis
 
 Dimensionsreduktion welche für Datenanalyse verwendet werden kann. Lineare Transformation mit
-minimalen Informationsverlust. Die Punktee werden als linear Kombination dargestellt.
+minimalen Informationsverlust. Die Punkte werden als linear Kombination dargestellt.
 
 ## Applications of PCA
 
-Wird sehr oft verweendet, zu Visualisierung oder DQA für Redundanzanalyse. PCA kann angeben wie viel
-Information verloren wird.
+Wird sehr oft verwendet, zur Visualisierung oder [Data Quality Assessment][] für Redundanzanalyse.
+PCA kann angeben wie viel Information verloren wird (wenn angewendet).
 
 ![PCA Redundancy reduction](images/pca-redundanz.png){width=50%}
 
-Soll nur Visualisiert werden sollte eher *t-SNE* verwendet werden.
+Soll nur visualisiert werden, sollte eher *t-SNE* verwendet werden.
 
 ## Principal Component Analysis
 
-Ziel des PCA ist es eine dimensionsreduktion zu eerreeeichen, ohne so wenig wie möglich Information
-zu veerlieren.
+Ziel des PCA ist eine Dimensionsreduktion, mit möglichst wenig Informationsverlust, zu erreichen.
 
 ### Projections to Base Vectors
 
-Einfache Idee ist das weglöschen eeiner Achse. Dies erreichen wir mit der Rotation um den
-Nullpunkt (siehe IMATH). die Projektion wird im rechtenwinkel zur Achse gemacht.
+Einfache Idee ist das weglöschen einer Achse. Dies erreichen wir mit der Rotation um den Nullpunkt (
+siehe IMATH). die Projektion wird im Rechtenwinkel zur Achse gemacht.
 
-![Rotation](images/pca-rotation.png){width=50%}
+![Rotation](images/pca-rotation.png){width=60%}
 
-Information kann man durch Streeeung (Varianz) messen. Wenn Streuung gleich null ist, sind alle
-Punkte beieinander. Je mehr Varianz beibehaltene werdene kann umso weniger Informationen geheen
+Information kann man durch Streuung (Varianz) messen. Wenn Streuung gleich null ist, sind alle
+Punkte beieinander. Je mehr Varianz beibehalten werden kann, umso weniger Informationen gehen
 verloren.
 
-#### Thee moree Variance thee more Information
+#### Thee more Variance thee more Information
 
-gestricheltee Linie ist die Information die verloren geht. Je grösser der Error, je grösser die
-Varianz. Die beste Projektion ist die, die ...
+Die gestrichelte Linie in der Abbildung \ref{rotation} ist die Information die verloren geht. Je
+grösser der Error, je grösser die Varianz. Die beste Projektion ist die, die den Informationverlust
+minimiert oder equivalent die, die die Varianz maximiert.
+
+![Projection Error\label{rotation}](images/pca-variance.png){width=50%}
 
 ### Data Redundancy
 
-EEine *mean ceentreed* Feeaturee hat immere den gleichen Weert und somit **null VArianz**. Deshalb
-kann die Info gelöscht werden. Eine weitere Art ist weeenn zwei Features *maximale Covarianz*
-aufweisen (dzum Beipsiel gleiche Daten in unterschiedlicher Einheiten (m/km)).
-![Rotation](images/pca-variance.png){width=50%}
+Ein *mean centred* Feature hat immer den gleichen Wert und somit **null Varianz**. Deshalb kann die
+Info gelöscht werden. Eine weitere Art der Redundanz ist, wenn zwei Features *maximale Covarianz*
+aufweisen (zum Beipsiel gleiche Daten in unterschiedlicher Einheiten (m/km)).
 
-Features können auch teilweise Redundant sien wenn sie einen *non-zero covariance* aufweisen.
-Idealweise entfernt die Projektion die covariance bevor sie nützliche Informationen zerstören
-könnten.
+Features können auch teilweise Redundant sein, wenn sie einen *non-zero covariance* aufweisen.
+Idealerweise entfernt die Projektion die Kovarianz, bevor sie nützliche Informationen zerstören
+könnte.
 
-#### Strategies for Dimensionality Reeduction
+#### Strategies for Dimensionality Reduction
 
-1. Redundanz eeliminieren
+1. Redundanz eliminieren
     - voll redundante Features löschen
-    - Feeatures kombinieren um Covarianz zu entfernen
+    - Features kombinieren um Kovarianz zu entfernen
 1. Informationen löschen (so wenig wie möglich)
-    - Informationsverlust während der Projektion minimieren indem die verbleibende Varianz minimiert
+    - Informationsverlust während der Projektion minimieren, indem die verbleibende Varianz minimiert
       wird.
-      
 
 here add some notes..

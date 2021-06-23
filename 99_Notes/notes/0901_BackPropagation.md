@@ -1,21 +1,21 @@
 # Back Propagation
 
-Wird genutzt um Neural Networks zu trainieren und beschleunigt die Berechnung der Gradient
+Wird genutzt um Neural Networks zu trainieren und beschleunigt die Berechnung des Gradient
 Descent-Algorithmus.
 
 ## Motivation
 
 Back Propagation ist sehr wichtig in ML. Viele Modelle (NN, CNN, RNN) nutzen BP für das Training -
-überall wo es Mehrere Layers gibt. Sie steigern die Berechnung der Gradientengleichung.
+überall wo es mehrere Layers gibt. Sie beschleunigen die Berechnung der Gradientengleichung.
 
-BP ist aber schwierig. Ein einzelner Layer ist eher einfach, das grosse ganze macht es Komplex.
+BP ist aber schwierig. Ein einzelner Layer ist eher einfach, das grosse Ganze macht es Komplex.
 
 BP ist built-in in den open-source ML-Frameworks.
 
 ## The Chain Rule
 
 Methode um die Ableitung einer zusammengesetzten Funktion zu finden. Der Output der einen Funtion
-ist der Input der nächsten.
+ist der Input der Nächsten.
 
 ### The Logistic Function
 
@@ -37,31 +37,31 @@ y}\frac{dy}{dt}$$
 
 ## Gradient Descent again
 
-Die Abbildung \ref{nngd} zeigt einem Drei Layer Neural Network mit einem Hidden-Layer. Dieser wird
-dann mit gelabelten Daten mit Hilfe von Gradient Descent trainiert.
+Die Abbildung \ref{nngd} zeigt ein drei Layer Neural Network mit einem Hidden-Layer. Dieser wird mit
+gelabelten Daten und mit Hilfe von Gradient Descent trainiert.
 
-![Three Layer Neural Network\label{nngd}](images/nngd.png){width=50%}
+![Three Layer Neural Network\label{nngd}](images/nngd.png){width=70%}
 
-![$L$-Layer Neural Network](images/nngd2.png){width=50%}
+![$L$-Layer Neural Network](images/nngd2.png){width=70%}
 
-![Gradient Descent Training](images/gdtraining.png){width=50%}
+![Gradient Descent Training](images/gdtraining.png){width=70%}
 
 ## Back Propagation
 
-![Back Propagation Derivation](images/backprop.png){width=50%}
+![Back Propagation Derivation](images/backprop.png){width=70%}
 
-![Revisiting Gradient Descent](images/deltagd.png){width=50%}
+![Revisiting Gradient Descent](images/deltagd.png){width=70%}
 
 ### Familiar Cost & Activation Functions
 
-Damit wir mit Back Propagation starten können benötigen wird die Kostenfunktion $J$ und die
-Aktivierungsfunktion $g$. Daraus erhalten wir ihre Gradienten wodurch wir die Kostenfunktion
-optimieren können. Dazu benötigen wir Funktionen die differenzierbar sind z.B. MSE oder Logistic
+Damit wir mit Back Propagation starten können, benötigen wir die Kostenfunktion $J$ und die
+Aktivierungsfunktion $g$. Daraus erhalten wir ihre Gradienten, womit wir die Kostenfunktion
+optimieren. Dazu benötigen wir Funktionen die differenzierbar sind z.B. MSE oder Logistic
 Function (sigmoid).
 
 ### The Multi-Variate Chain Rule
 
-Weil die Kostenfunktion $J$ auf allen Werten von $z$ in jedem Level basiert, muss die Partielle
+Weil die Kostenfunktion $J$ auf allen Werten von $z$ in jedem Level basiert, muss die partielle
 Kettenregel verwendet werden.
 
-![The Multi-Variate Chain Rule](images/mvcr.png){width=50%}
+![The Multi-Variate Chain Rule](images/mvcr.png){width=70%}

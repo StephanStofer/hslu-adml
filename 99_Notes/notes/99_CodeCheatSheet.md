@@ -1,6 +1,6 @@
 # Code CheatSheet
 
-Contains several code snippets and usful library functions.
+Contains several code snippets and useful library functions.
 
 ## Python
 

@@ -1,23 +1,23 @@
 # Transfer Learning
 
 Filter in Deep CNN lernen in frühen Layers abstrakte Features wie zum Beispiel Kantenfilter, Color
-Blobs etc. Je weiter der Layer rechts liegt, umso mehr steigt die komplexität dieses Features. Der
-finale Layer erlent dann Prototypen Objekte. Ein neuronales Netz sind als Feature Extractors. Dieser
+Blobs etc. Je weiter der Layer rechts liegt, umso mehr steigt die Komplexität dieser Features. Der
+finale Layer erlernt Prototypen-Objekte. Ein neuronales Netz sind also Feature Extractors. Dieser
 Part im Netz wird *Backbone* genannt (alle Hidden ohne Output). Daran kleben wir Klassifikatoren,
-Lokalisierung oder was auch immer. Diese sind also Task agnostisch (göttlich) und können für alle
-Arten von CNN in den ersten Layers verwendet werden.
+Lokalisierung oder was auch immer. Diese sind Task agnostisch (göttlich/generisch) und können für
+alle Arten von CNN in den ersten Layers verwendet werden.
 
-task dedizierter werden die Strukturen je weiter rechts im Netz.
+Task dedizierter werden die Strukturen je weiter rechts im Netz.
 
 ## Transfer Learning
 
 Das ist die Idee von Transfer Learning. Um gute Modelle zu trainieren braucht man ein tiefes Netz.
-Mit der Anzahl Schichten Menge an optimierungsparameter und damit der Rechenaufwand. Um ein Model zu
-trainieren, braucht man also annotierte Daten.
+Mit der Anzahl Schichten steigt die Menge an Optimierungsparameter und damit der Rechenaufwand. Um
+ein Model zu trainieren, braucht man also annotierte Daten.
 
 Weil die ersten Phasen relativ generisch sind, können diese in einem *Pre-Training* verwendet
 werden. Die Domänenspezifischen Bilder werden danach in einem kleineren Umfang trainiert. Der
-Datensatz bildet genau das ab, was schlussendlich erreicht werden soll. TRainiert wird nur der
+Datensatz bildet genau das ab, was schlussendlich erreicht werden soll. Trainiert wird nur der
 finale Layer, evtl. ein paar wenige mehr.
 
 ## Transfer Learning Approaches
@@ -37,16 +37,15 @@ Strategie 1 um einen Auftrag ausführen zu können:
 
 1. Pre-Trained model für Objekt Detection auswählen
     - Zum Beispiel YOLO (geeignet für Video) trainiert auf COCO-Datenset
-
-2. Den letzten Layer für die Objekt lokalisierung abtrennen
-3. Neuen Objekt lokalisierungs-Layer mit zwei Kategorien hinzufügen
-4. Nur den letzten Layer mit den domänenspezifischen Datenset trainieren
+2. Den letzten Layer für die Objekt-Lokalisierung abtrennen
+3. Neuen Objekt-Lokalisierungs-Layer mit zwei Kategorien hinzufügen
+4. Nur den letzten Layer mit dem domänenspezifischen Datenset trainieren
 
 #### Pros and Cons
 
 * sehr effizient, weil nur ein Layer trainiert wird
-* am wenigsten Datenhungrige Technik
-* Übernahme der des gesamten Backbones aus dem vortrainierten Model
+* am wenigsten datenhungrige Technik
+* Übernahme des gesamten Backbones aus dem vortrainierten Model
 * Das bedeutet, dass diese Layers *frozen* sind
 
 Der Nachteil ist, dass die Backpropagation von den frozen Layers gestoppt wird. Weil diese nicht mit
@@ -56,12 +55,12 @@ Falls man mit der Performance nicht zufrieden ist, kann mann Strategie 2 [Fine-T
 
 ### Fine-Tuning
 
-Dann wird nicht nur der letzte Layer trainiert, sondern einige der letzten, weil diese die komplexe
-Strukturen lernen. Diese werden also unfreezed und neu trainiert.
+Es wird nicht nur der letzte Layer trainiert, sondern einige der letzten Layers, weil diese die
+komplexe Strukturen lernen. Diese werden unfreezed und neu trainiert.
 
 Die Gewichte sind dabei nicht zufällig, sondern stammen aus dem Pre-Training. Die Optimierung muss
-also nicht von ganz vorne neu beginnen, sondern man hat schon einen akzeptablen Stand (Transfer
-Learning Effekt). Das Training wird aber Ressourcen- und Datenhungriger.
+nicht von ganz vorne neu beginnen, sondern man hat schon einen akzeptablen Stand (Transfer Learning
+Effekt). Das Training wird aber Ressourcen- und Datenhungriger.
 
 Jeweils Performance messen.
 
@@ -69,7 +68,7 @@ Das Fine-Tuning kann im Extremfall auf alle Backbone-Layers ausgeweitet werden.
 
 ### Transfer Learning in Industry
 
-Löst Probleme von ungeheuren Kosten und benötigten Daten bei einem Training von Scratch.
+Löst Probleme von ungeheuren Kosten und benötigten weniger Daten als bei einem Training von Scratch.
 
 ## Issues with Supervised Learning
 
@@ -86,16 +85,16 @@ gilt für
 Aktuell grosses Forschungsthemen.
 
 * Pre-Training benötigen imense Datensets
-* Daten wären vorhanden, aber das labelling skaliert nicht
+* Daten wären vorhanden, aber das labeling skaliert nicht
 
 ### Masked Language Modelling
 
 Man nehme eine riesige Menge an unlabeled Sätzen in natürlicher Sprache und zufällig werden Wörter
-maskiert. Ein pre-trained Model wird verwendet um dieses mit den Sätzen mit den Masken weiter
-trainiert wird. Der Clou daran ist, dass man weiss was maskiert wurde und damit kann man das
-Training (Optimierung) gestalten.
+maskiert. Ein pre-trained Model wird verwendet, um dieses mit den Sätzen und den Masken weiter
+trainiert wird. Der Clou daran ist, dass man weiss was maskiert wurde und kann damit das Training (
+Optimierung) gestalten.
 
-![Masked Language Modelling](images/bert.png){width=50%}
+![Masked Language Modelling](images/bert.png){width=70%}
 
 ### Contrastive Learning
 
@@ -105,8 +104,8 @@ berechnet nicht einen konkreten Wert, sondern vergleicht die beiden Bilder.
 ![Masked Language Modelling](images/contrastivelearning.png){width=50%}
 
 Man samplet aus einem Bild zwei *Tiles* A und B. Alle B' werden in einen Batch gelegt. Wir fordern
-für das Neuronale Netz eine hohe Similarität zwischen A und B des gleichen Bildes und eine tiefe bei
-anderen.
+für das Neuronale Netz eine hohe Similarität zwischen A und B des gleichen Bildes und eine tiefe
+Similarität beim anderen.
 
 Bei Videos wird es ähnlich gemacht. Das Video wird einfach in zwei gleich lange Teile gesampelt (
 z.B. je 3s).
