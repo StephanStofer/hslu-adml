@@ -53,10 +53,10 @@ Engineering*.
 
 ![Text Feature Extraction](images/textfeatureextraction.png)
 
-### Feature Engineering vs. Featuree Learning
+### Feature Engineering vs. Feature Learning
 
 Moderne *Deep Learning* Algorithmen können Features direkt aus den Daten lernen. Aber häufig stehen
-nicht die umfangreichen Daten zur Verfügung die nötig wären um DL zu betreiben, welch auch gelabelt
+nicht die umfangreichen Daten zur Verfügung die nötig wären um DL zu betreiben, welche auch gelabelt
 sein müssten. Ausserdem bietet die Genialität und Expertise des Menschen mehr als DL kann.
 
 ## Feature Engineering for Tabular and Time-Series Data
@@ -75,7 +75,7 @@ nochmals erwähnt:
 * Duplikate entfernen
 * Irrelevante Daten entfernen
 * Falsche bzw. unterschiedliche Bezeichnungen vereinheitlichen
-* Outliers (Ausreisser) auf kausalität prüfen
+* Outliers (Ausreisser) auf kausalität prüfen - Hinterfragen (Schnee im Sommer?!)
 * Fehlende Daten mit Mittelwert, Median füllen
 
 ### Data Imputation
@@ -136,8 +136,8 @@ dimensionalen Featureraum. Die Daten können einfacher analysiert werden.
 
 Expertise ist eine der grösste Schlüssel um Daten zu verbessern. Als Beispiel der *Buffett
 Indicator*, welcher die Entwicklung von Börsenwerte mit einer eigens entwickelten Formel aus
-Indikatoren voraussagen kann. Dazu brauchte er Expertenwissen um das neue Feature, seinen Indikator,
-zu generieren. Dies wäre nicht offensichtlich nur aus den Rohdaten.
+Indikatoren voraussagen kann. Dazu brauchte er Expertenwissen, um das neue Feature - seinen
+Indikator - zu generieren. Dies wäre nicht offensichtlich nur aus Rohdaten.
 
 ### Transform Features
 
@@ -156,13 +156,13 @@ plot.ylabel('Frequency')
 plot.show()
 ```
 
-![Spectogram](images/spectogram.png){width=60%}
+![Spectogram](images/spectogram.png){width=50%}
 
 ### Expert Features in Time-Series
 
-Experten sind oft nötig, um richtige Schlüssel zu ziehen, oder auf Features (Formeln oder
+Experten sind oft nötig, um richtige Schlüsse zu ziehen, oder auf Features (Formeln oder
 Betrachtungsweisen) hinzuweisen die nützlich sein können. Damit kann zum Beispiel die *Votalität*
-abschätzen zu können und somit Risiken besser abzuschätzen.
+abgeschätzt und somit Risiken besser mitigiert werden.
 
 ## Image Data & Computer Vision Applications
 
@@ -183,7 +183,7 @@ Es gibt viele Algorithmen um Feature zu detektieren.
 
 #### Edge Detection
 
-Ein einfache Möglichkeit um Ecken zu finden ist der *Gradient* eines Bilders zu analysieren. Der
+Eine einfache Möglichkeit um Ecken zu finden ist der *Gradient* eines Bilders zu analysieren. Der
 Gradient $\nabla(I)$ eine Bildes $I$ ist die erste Ableitung in eine Richtung. Eine weitere
 Möglichkeit ist das übereinanderlegen des Bildes und verschieben um einen Pixel in eine Richtung.
 Danach Pixelwerte vom Original subtrahieren. Je nach Richtung erhält man die Ableitung nach $x$ bzw.
@@ -199,7 +199,8 @@ Segmente aufgeteilt. *K-means clustering* gruppiert Pixel in $k$ Segmente (unsup
 ![K-Means Cluster mit $k=3$](images/kmeanscluster.png){width=20%}
 
 *Gestalt Principles* sind menschliche Warhehmungen, wie ähnliche Elemente gruppiert werden und
-Patterns erkannt werden. Auch können komplexe Bilder vereinfacht werden, wenn wir Objekte wahrnehmen
+Patterns erkannt werden. Auch können komplexe Bilder vereinfacht werden, wenn wir Objekte wahrnehmen.
+
 ![Gestalt Principles](images/gestaltprinciples.png){width=40%}
 
 ### Image Denoising
@@ -220,19 +221,19 @@ Histogrammausgleich kann helfen, ein Bild zu schärfen.
 Ist ein Feature-Erkennungs Algorithmus um *lokale Features* in einem Bild zu finden. Dazu werden *
 key-points* aus einem Set von Referenzbilder in eine Datenbank extrahiert. Die Key-Points sind
 besondere Merkmale in einem Bild bzw. dessen abgebildeten Objekt. Diese werden dann im neuen Bild
-wieder gesucht, indem die Features verglichen werden. Auch wenn das Bild skaliert wurde, Noise- und
-Belichtungsresistenz. Der Bild inhalt wird transformiert in lokale Feature-Koordinaten welche
-invariant gengen Translation, Rotation, Skalierung und weitere Bildparameter.
+wieder gesucht, indem die Features verglichen werden. Auch wenn das Bild skaliert wurde, ist er Noise- und
+Belichtungsresistenz. Der Bildinhalt wird in lokale Feature-Koordinaten transformiert, welche
+invariant gegen Translation, Rotation, Skalierung, Projektion und affine Transformationen.
 
 ### Feature Learning in Computer Vision
 
-Feature Learning mit Bilder verschiebt sich mehr und mehr in Richtung Deep Nerual Networks.
+Feature Learning mit Bilder verschiebt sich mehr und mehr in Richtung Deep Neural Networks.
 
 ## Text Data & Language Applications
 
 Natural Language Processing (NLP) ist die Schnittmenge aus Computer Science und Linguistik. Diese
-beschäftig sich mit der Form der Sprache, Bedeutung und Kontext. Mit NLP versuchen wir *
-Representations* zu erreichen, welche uns nützliche Sachen mit Text ermöglichen wie Übersetzung und
+beschäftigt sich mit der Form der Sprache, Bedeutung und Kontext. Mit NLP versuchen wir *
+Representations* zu erreichen, welche uns nützliche Sachen mit Text ermöglichen, wie Übersetzung und
 Konversation.
 
 ### NLP poses really difficult problems
@@ -267,7 +268,7 @@ Vorteile.
 #### One-Hot Encoding
 
 Bei der *One-Hot Ecoding*-Methode wird aus dem Korpus (Refernzmenge) eine Liste von einmaligen
-Worten erzeicht. Jedes Wort des neuen Textes wird dann hinzugefügt und überall dort, wo ein Wort
+Worten erzeugt. Jedes Wort des neuen Textes wird hinzugefügt und überall dort, wo ein Wort
 vorhanden ist, mit 1 markiert. Diese Repräsentation ist sehr spärlich, aber trotzdem
 hoch-dimensional, sie wächst extrem schnell.
 
@@ -279,6 +280,7 @@ hoch-dimensional, sie wächst extrem schnell.
 der analysiert werden soll wird als Vektor hinzugefügt. Die Vektorspalten entsprechen den Tokens die
 im Text vorkommen und die Values entsprechen der Häufigkeit. Diese Methode ist effizienter aber
 immer noch spärliche Repräsentation. Ausserdem geht die Ordungen der Worte verloren!
+
 ![Bag-of-Words](images/bag-of-words.png){width=40%}
 
 #### Term Frequency-Inverse Document Frequency (TF-IDF)

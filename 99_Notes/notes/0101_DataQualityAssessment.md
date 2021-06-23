@@ -54,7 +54,7 @@ Sehr nützlich zur grafischen Darstellung. *Outliers* sind die Werte die grösse
 Wenn viele Outliers müssen Daten genau angeschaut werden, ob sie trotzdem plausibel sind.
 
 #### Five Number Summary of a Data Distribution
-In mit Python kann sehr einfach die $Q1, Q2, Q3$, min und max einer Datenreihe ausgegeben werden:
+Mit Python kann sehr einfach die $Q1, Q2, Q3$, min und max einer Datenreihe ausgegeben werden:
 
 ```python
 import numpy as np
@@ -96,8 +96,8 @@ Kommen immer wieder vor. ML-Algorithmen können nicht damit umgehen (Ausnahme En
 
 * Zeilen mit NULL Werten löschen (bei vielen verfügbaren Daten)
 * Fehlende Daten manuell einsetzen
-* Globale Konstanten einsetzen (UNKNOWN, $infty$)
-* Tendenzen verwenden (Mittelwert für symmetrische Daten, Medien für Schiefedaten)
+* Globale Konstanten einsetzen (UNKNOWN, $\infty$)
+* Tendenzen verwenden (Mittelwert für symmetrische Daten, Median für Schiefedaten)
 * Tendenzen auch pro "Klasse" (Eigenschaften) berechnen (z.B Krebskranke und gesunde Patienten)
 * Regressionsmodell (sehr aufwändig und ungewohnt in Praxis)
 
@@ -129,4 +129,4 @@ data.profile_report()
 ```
 
 ## Fazit
-Bei jedem ML-Projekt ist in Data Quality Assessment Pflicht
+Bei jedem ML-Projekt ist in Data Quality Assessment Pflicht!

@@ -1,14 +1,15 @@
-# Data Preparation for Recommender Systems
-Um die Daten (strings) verarbeiten zu können müssen diese erst Vorverarbeitet werden
+## Data Preparation for Recommender Systems
+Folgend Notizen zur Übung.
+Um die Daten (strings) verarbeiten zu können müssen diese erst vorverarbeitet werden.
 
-## Convert Strings to lower-case format
+### Convert Strings to lower-case format
 Text in lower-case Buchstaben umwandeln damit gleiche Worte immer gleich geschrieben werden.
 
 ```python
 df['description'] = df['description'].str.lower()
 ```
 
-## Tokenizing
+### Tokenizing
 Tokenizing ist ein Verfahren um einen Text zu bereinigen. Das Resultat der Tokenisierung ist eine Liste von Tokens, die als Liste im technischen Sinn, oder als Abfolge von durch Zeilenumbrüche getrennte Tokens. Deren eine Tokenklasse angehängt wird. Während diesem Vorgang werden einige Einzelaufgaben bewältigt. Die Tokens werden auch als *StopWords* bezeichnet.
 
 * Abkürzungen erkennen und isolieren (es gibt auch gleiche Abkürzungen für unterschiedliche Worte)
@@ -23,11 +24,11 @@ Tokenizing ist ein Verfahren um einen Text zu bereinigen. Das Resultat der Token
     * Diese Schuhe haben sFr. 147.- gekostet. $\longrightarrow$ [diese,schuhe,haben,currency(147,sfr,Rp),gekostet,.]
     * Wir treffen uns am 24. April um 15 Uhr. $\longrightarrow$ [wir,treffen,uns,am,date(24,4,Jr),um,time(15,Min,Sec),.]
 
-## Lemmatization
+### Lemmatization
 Die Lemmatisierung ist das Rückführen von Worten in ihre Grundform. So wie sie im Wörterbuch stehen, diese werden als *Lemma* bezeichnet. Das ursprüngliche Wort ist die *Vollform*.
 
-## Stemming
+### Stemming
 Als Stemming wird die Stammformreduktion oder Normalformenreduktion bezeichnet. Es ist ein Verfahren um verschiedene morphologische Varianten eines Wortes auf ihr gemeinsamen Wortstamm zurückzuführen. Zum Beispiel der **Deklination** von *Wortes* oder *Wörter* zu *Wort* und **Konjugation** von *geseheen* oder *sah* zu *sehen*. Bekanntes Framework ist das `Snowball`von Martin Porter.
 
-## Data
+### Data
 Daraus ergeben sich normalisierte Daten die für das Training und den Test verwendet werden. Das Set ist immer in die zwei Gruppen Test und Training aufzuteilen.
