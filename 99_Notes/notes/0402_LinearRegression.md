@@ -148,5 +148,4 @@ unwichtigen Features weniger zu gewichten.
 
 Grosse Parameter werden bestraft. Hat Effekt, dass nur die wichtigen Features die Regression
 steuern. Weniger relevante Features werden unterdrückt. Kontrolle über den *
-Regularisierungsparameter*
-$\lambda$
+Regularisierungsparameter* $\lambda$
