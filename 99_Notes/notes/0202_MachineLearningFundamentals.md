@@ -88,7 +88,7 @@ Bestimmung der Entfernung verwendet werden, da man keiner Geraden folgen kann. D
 ist definiert durch $$manhattan(X,Y)=\sum{i=1}^n\|x_i-y_i\|$$ Der Wertebereich der Distanz liegt
 zwischen $[\,0,\infty[\,$
 
-![Manhattan Distanz bei Schachbrett-Muster](manhattandistance.png){width=60%}
+![Manhattan Distanz bei Schachbrett-Muster](images/manhattandistance.png){width=60%}
 
 ## Levenshtein or Edit Distance for Strings
 
@@ -194,14 +194,14 @@ zu einem neuen Punkt sucht und anhand deren Eigenschaften klassifiziert wird. k-
 mit $k=1$ wird einfach das Label des nahesten Punktes übernommen. Bei $k>1$ wird ein
 Mehrheitsvoting gegenüber den $k$-nahesten Punkte gemacht.
 
-![K-Nearest Neighbors Classification](knn-classification.png){width=80%}
+![K-Nearest Neighbors Classification](images/knn-classification.png){width=80%}
 
 ## K-Nearest Neighbors Regression
 
 Löst Regressionsproblem zum Beispiel Preisvorhersage aus einem Regressionsmodell der $k$-nahesten
 Punkte. Funktionsweise mit Parameter $k$ analog k-NN-Klassifizierung.
 
-![K-Nearest Neighbors Regression](knn-regression.png){width=80%}
+![K-Nearest Neighbors Regression](images/knn-regression.png){width=80%}
 
 ## Hyperparameter
 
