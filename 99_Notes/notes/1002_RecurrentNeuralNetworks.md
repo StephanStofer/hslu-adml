@@ -1,6 +1,8 @@
 # Recurrent Neural Networks
 
-Mit rekurenten wiederkehrende Netzen für Zeitreihen. Zum Beispiel Sprache.
+Mit rekurrenten wiederkehrende Netzen (NN mit Rückkopplung) die Verarbeitung von Zeitreihen wie 
+natürliche Sprache 
+ermöglichen.
 
 ## Unsupervised NLP
 
@@ -13,6 +15,9 @@ Levenstein-Distanz ([Levenshtein or Edit Distance for Strings][]) gemessen. Die 
 ein Wort in ein anderes zu transformieren.
 
 Semantik klärt die Bedeutung eines Wortes, zum Beispiel Fahrrad/Velo. Bedeutet das Gleiche.
+
+So können Rechtschreibeprüfungen oder search engines gelehrt werden, aber nicht das Verständnis 
+von natürlicher Sprache.
 
 ### Word Relatedness
 
@@ -87,7 +92,7 @@ Vorgänger.
 
 ### Deep Insidee a Sequencee-to-Sequence RNN
 
-RNN verwendet die gleichen Gewichtsmatrizen und Biases für jeden Step.
+RNN verwendet die gleichen Gewichtsmatrizen und Biases für jeden Step. h0 wird mit einem Null-Vektor initialisiert.
 
 #### Vanishing Gradient Problems of RNNs
 
@@ -96,26 +101,29 @@ vorkommen, dass der Gradient explodiert. Ein weiteres Problem von RNNs ist das �
 Sagt es eine Sequence (Satz) voraus, muss es sich das Subjekt (z.B. Einzahl/Mehrzahl) am Anfang
 merken.
 
-### Gated Recurrent Units
+### Gated Recurrent Units (GRU)
 
 Verhindern vanishing Problem von Gradient. Berechnen nicht den Kandidaten $h_t$, sondern *wie viel*
 vom alten Wert übernommen werden soll.
 
 Durch das einfügen einer $\sigma$ (Sigmoid) Multiplikation kann das Netz unterscheiden, ob der
-vorherige Wert übernommen werden soll (1) oder nicht (0).
+vorherige Wert übernommen werden soll (1) oder nicht (0). für den neuen hidden State wird die 
+tanh Aktivierungsfunktion verwendet.
 
 ### Long Short-Term Memory Model
 
 LSTM ist ein alternatives Model für [Gated Recurrent Units][]. Beide verwenden Hidden States als Memory, LSTM nutzt
-erweiterten Memorystatus. GRUs sind generell schneller, LSTM zeigen aber bessere Performance.
+erweiterten Memorystatus. GRUs sind generell schneller, LSTM zeigen aber bessere Performance. 
+Beide Modelle können Sequenzen bis um die 100 Token merken, maximal 1000.
 
 ### Bidirectional RNNs
 
-Können in die «Zukunft» schauen, wir müssen wissen, was wir später schreiben möchten.
+Können in die «Zukunft» schauen, wir müssen wissen, was wir später schreiben möchten. (Teddy 
+Roosevelt vs Teddy Bear)
 
 ### Encoder-Decoder Architecture
 
-Die vorherigen RNN-modelle können nur verwendet werden wenn Input und Output die gleiche Länge
+Die vorherigen RNN-modelle können nur verwendet werden, wenn Input und Output die gleiche Länge
 haben. Wenn Input und Output verschiedene Länge haben (z.B. Übersetzung oder Sentiment Analysis)
 benötigen wir eine encoder-decoder Architektur.
 
@@ -136,7 +144,10 @@ Links den Encoder, rechts den Decoder.
 
 ## Attention Models
 
-Die Attention Mechanismen merken sich wo relevante Informationen von vorherigen Worten herangezogen werden können. 
+Die Attention Mechanismen merken sich wo relevante Informationen von vorherigen Worten 
+herangezogen werden können. Dies mimt das menschliche Verhalten. Je tiefer das Deep RNN, desto 
+komplexere Strukturen kann es lernen. Dabei werden die anzahl Layers im Encoder erhöht (1x 
+bidirektional RNN mit unidirektionalen RNNs).
 
 ![Attention Layer](images/attentionlayer.png){width=70%}
 
@@ -144,7 +155,9 @@ Die Attention Mechanismen merken sich wo relevante Informationen von vorherigen 
 
 ### RNNs do not parallelize
 
-Es muss sich nicht alles merken, sondern weiss wo nachschauen. Allerdings lassen sie sich nicht gut parallelisieren.
+Es muss sich nicht alles merken, sondern weiss wo nachschauen. Allerdings lassen sie sich nicht 
+gut parallelisieren. Transformer Netze (funktionieren komplett ohne Rückkopplung) lösen 2017 dieses 
+Problem.
 
 ### Transformers
 
