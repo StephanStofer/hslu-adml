@@ -38,12 +38,14 @@ Frank Rosenblatt implementierte als erster die Idee ein Model von Neuronen in de
 * Der *Bias* $b$ macht extra tuning des Aktivierungslayers möglich
 * Die *Aktivierung* eines einfachen Perceptrons ist ein Boolean ``True`` wenn gewisser Threshold
   erreicht
+* Der Bias und die Gewichte werden auf gelabelten Daten mit dem gradient descent (wie bei 
+    logistic regression) gelernt.
 
 ![The Perceptrion as a Logic Unit](images/perceptronaslogicalunit.png){width=40%}
 
 Die Funktion $g(z)$ wird *Activation Function* genannt. Sie produziert ein *Action Potential* oder *
-Activation* $a$. Als Aktivierungsfunktion können z.B. Sigmoid Funktion oder Soft-Max Funktion
-verwendet werden. Als Aktivierung wird ein *Hard Threshold* verwendet.
+Activation* $a$. Als Aktivierungsfunktion können z.B. Sigmoid Funktion, Soft-Max Funktion oder 
+Hard Threshold (Step Funktion) verwendet werden.
 
 Mit der Sigmoid-Funktion erhalten wir eine [Logistic Regression][] als Aktivierungsfunktion. Damit
 kann der Perceptron als linearen Klassifier verwendet werden.
@@ -56,8 +58,8 @@ Siehe Wahrheitstabelle in Abbildung \ref{percep}.
 
 #### Linear vs. Non-Linear Models
 
-Ein Single linear Network kann kein XOR implementieren, weil *Non-linear*. Mit einem multi linear
-wäre es möglich.
+Ein Single linear Network kann kein XOR implementieren, weil *Non-linear*. Ein einzelner Layer 
+kann keine Nicht-Linearen Modelle erzeugen, dafür sind zusätzliche Schichten notwendig.
 
 ![Linear vs. Non-Linear Models](images/linearnonlinear.png){width=40%}
 
@@ -102,8 +104,8 @@ simuliert das menschliche Gehirn.
 * Hidden Layer lernen neue Features, welche evtl. nicht identifiziert wurden
 * Training ist eher langsam, Implementierung aber schnell und einfach
 * Multi-Layer Artificial Neural Networks sind universale Approximationen
-* Führt aber eher zu overfitting
-* Als Gegenmittel [Regularization][]
+* Zu viele hidden Layers führt zu overfitting
+* Das Gegenmittel gegen overfitting ist [Regularization][]
 * sehr Fehlerresistent und Robust
 
 ### Deep Learning
@@ -120,7 +122,8 @@ Das Zaubermittel im Training.
 
 In Supervised Learning schmeissen wir die gelabelten Daten in das Netzwerk und schauen am Ende was
 rauskommt. Falls das nicht dem Ziel entspricht, werden die Parameter $W$ und $b$ so angepasst, dass
-das Resultat stimmt.
+das Resultat stimmt. Wir wählen die Gewichte W und die biases b so, dass die Kostenfunktion $J(W^{[k]}, b^{[k]})=f(y-\hat{y})$ 
+minimal wird.
 
 ### Choosing a Cost Function
 
@@ -161,7 +164,8 @@ Back Propagation mit Hilfe der Kettenregel $\delta^{[3]}$.
 
 ## Activation Functions and the Soft-Max Classifier
 
-Um den Output zu erhalten, benötigen wir eine Aktivierungsfunktion.
+Um nutzbaren Output zu erhalten, benötigen wir eine nicht lineare Aktivierungsfunktion. Mögliche 
+Varianten sind: Step Function (hard threshold), logistic function, ReLu, Soft-max, ...
 
 ### Choosing an Activation Function
 
@@ -197,7 +201,9 @@ Sind aber generell eine gute Wahl für Hidden Layer Activations.
 
 Wird für Output bei multi-labels verwendet. Damit kann W'keit über alle Inputwerte bestimmt werden,
 egal wie die Aussehen (postiv, negativ, grösser 1, usw.). Softmax modifiziert ein Vektor von $n$
-reelen Werten, sodass die Summe 1 gibt.
+reellen Werten, sodass die Summe 1 (100%) gibt.
+
+$$softmax_j(z) = \frac{exp(z_j)}{\sum_{k=1}^{K}exp(z_k)}$$
 
 Die Softmax-Funktion ist eine Generalisierung der Logistic Function für mehrere Dimensionen und wird
 auch in *multinomial* Logistic Regression verwendet. Wird normalerweise bei der letzten
