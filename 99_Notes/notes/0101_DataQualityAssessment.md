@@ -33,6 +33,15 @@ Dies ist detektiv-Arbeit. Wenn etwas verdächtig erscheint, weitergraben! Die Da
 * Anomalie Prüfung in Syntax und Semantik (sind die Ausschläge erklärbar?)
 * NULL Werte und Duplikate erforschen
 
+#### Apply measure even to a small Dataset
+
+* Duplikate löschen
+* Redundante Features entfernen (mit Korrelation = 1.0)
+* Datum in Jahr, Monat, Tag splitten
+* Feature Typ von String in Kategorische ändern
+
+Vorsicht vor dem ersetzen von Null/NA Values. Evtl. besser diese löschen, anstatt mit Median o.ä. füllen.
+
 ### Statistische Kennzahlen
 Geben uns einen Fingerabruck und erste Plausibilisierung der Daten. Die wichtigsten Kennzahlen sind:
 
@@ -83,11 +92,11 @@ $Cov(X,Y) = \frac{1}{1-n} \sum_{i=1}^{n}(x_i - \mu_X)(y_i - \mu_Y)$
 Die Kovarianz zeigt die Variablität von zwei Datensätzen auf (nicht normierte Streuung 2 Datenreihen). Ist der Wert positiv, verhalten sich die beiden Daten ähnlich. Ist sie negativ, entsprechend nicht. Bei Kovarianz von ~0 besteht eine unabhängige Verteilung. Ist aber schwierig zu interpretieren, weil sie nicht normiert ist.
 
 #### Covarianzmatrix
-Die Kovarianzmatrix ist sehr wichtig in ML. Sie enthält alle Kovarianzen aller Varianzpaare. Die Diagonale kann durch die Varianz von X ersetzt werden (Cov(X,X)=Var(X)).
+Die Kovarianzmatrix ist sehr wichtig in ML. Sie enthält alle Kovarianzen aller Varianzpaare. Die Diagonale kann durch die Varianz von X ersetzt werden ($Cov(X,X)=Var(X)$).
 
 #### Pearson Korrelation
 
-$\rho(X,Y) = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}$
+$$\rho(X,Y) = \frac{Cov(X,Y)}{\sigma_X \sigma_Y} = \frac{Cov(X,Y)}{\sqrt{Var(X)} \sqrt{Var(Y)}}$$
 
 Kovarianz wird durch die Standardabweichung dividiert und somit normiert. Deshalb ergeben sich Werte zwischen 1 (perfekte Korrelation), -1 (perfect anti-correlation) und 0 (statistisch unabhängig). Damit kann die Datenreihe verglichen werden. Die Korrelationsmatrix kann als Heatmap gut dargestellt werden.
 

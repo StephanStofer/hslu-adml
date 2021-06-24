@@ -1,7 +1,8 @@
 # Principal Component Analysis
 
 Dimensionsreduktion welche für Datenanalyse verwendet werden kann. Lineare Transformation mit
-minimalen Informationsverlust. Die Punkte werden als linear Kombination dargestellt.
+minimalen Informationsverlust. Die Punkte werden als linear Kombination dargestellt. Gehört zu
+Unsupervised Learning.
 
 ## Applications of PCA
 
@@ -18,7 +19,7 @@ Ziel des PCA ist eine Dimensionsreduktion, mit möglichst wenig Informationsverl
 
 ### Projections to Base Vectors
 
-Einfache Idee ist das weglöschen einer Achse. Dies erreichen wir mit der Rotation um den Nullpunkt (
+Einfache Idee ist das Weglöschen einer Achse. Dies erreichen wir mit der Rotation um den Nullpunkt (
 siehe IMATH). die Projektion wird im Rechtenwinkel zur Achse gemacht.
 
 ![Rotation](images/pca-rotation.png){width=60%}
@@ -39,7 +40,7 @@ minimiert oder equivalent die, die die Varianz maximiert.
 
 Ein *mean centred* Feature hat immer den gleichen Wert und somit **null Varianz**. Deshalb kann die
 Info gelöscht werden. Eine weitere Art der Redundanz ist, wenn zwei Features *maximale Covarianz*
-aufweisen (zum Beipsiel gleiche Daten in unterschiedlicher Einheiten (m/km)).
+aufweisen (zum Beispiel gleiche Daten in unterschiedlicher Einheiten (m/km)).
 
 Features können auch teilweise Redundant sein, wenn sie einen *non-zero covariance* aufweisen.
 Idealerweise entfernt die Projektion die Kovarianz, bevor sie nützliche Informationen zerstören
@@ -51,7 +52,7 @@ könnte.
     - voll redundante Features löschen
     - Features kombinieren um Kovarianz zu entfernen
 1. Informationen löschen (so wenig wie möglich)
-    - Informationsverlust während der Projektion minimieren, indem die verbleibende Varianz minimiert
-      wird.
+    - Informationsverlust während der Projektion minimieren, indem die verbleibende Varianz
+      minimiert wird.
 
 here add some notes..

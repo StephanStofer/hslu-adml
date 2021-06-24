@@ -158,4 +158,6 @@ Gesamtgenauigkeit ergibt sich aus dem Durchschnitt der Genauigkeit aller Runden.
 auch dann verwendet, wenn sehr sehr viele Daten vorhanden wären. Grund ist, dass wir aus diesem
 Verfahren stabile Aussagen erhalten, oder wenn Training sehr, sehr rechenintensiv.
 
-![ValidationWorkflowSupervisedLearning](images/ValidationWorkflowSupervisedLearning.png){width=60%}
+![Validation Workflow Supervised Learning](images/ValidationWorkflowSupervisedLearning.png){width=60%}
+
+Aufwendigste Methode ist *Leave-One-Out Cross-Validation*.

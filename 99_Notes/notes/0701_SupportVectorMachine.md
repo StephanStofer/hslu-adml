@@ -1,6 +1,6 @@
 # Support Vector Machine
 
-Skalierbar, komplexe Entscheidungsgrenzen (Decision Boundaries) mit Kernels, insenitiv auf Outliers.
+Skalierbar, komplexe Entscheidungsgrenzen (Decision Boundaries) mit Kernels, insensitiv auf Outliers.
 Es geht um Distanzen - welche zu den nahesten Punkten maximiert werden soll. Ist aber linear!
 
 ## Motivation
@@ -194,7 +194,7 @@ von der Margin abweichen darf. Mit dem Hyperparameter $C$ in \ref{slackvariable}
 ob ein eher engerer Margin schlimmer ist, oder mehr Verletzungen in den Trainingsdaten erlaubt sind.
 Evaluation von $C$ via Cross-Validation.
 
-![Slack Variables\label{slackvariable}](images/slackvariable.png){width=40%}
+![Slack Variables\label{slackvariable}](images/slackvariable.png){width=60%}
 
 ### Regularization Parameter
 
@@ -248,11 +248,11 @@ Skalarprodukt, addiert Konstante $r$ und rechnet das Ganze hoch $d$ $$(\vec{x} \
 * $r$ = Koeffizient
 * $d$ = Grad des Polynoms
 
-![Example Polynomial Kernel](images/polykernel.png){width=40%}
+![Example Polynomial Kernel](images/polykernel.png){width=60%}
 
-![2. Example Polynomial Kernel](images/polykernel2.png){width=40%}
+![2. Example Polynomial Kernel](images/polykernel2.png){width=60%}
 
-![3. Example Polynomial Kernel](images/polykernel3.png){width=40%}
+![3. Example Polynomial Kernel](images/polykernel3.png){width=60%}
 
 Output des Kernel ist das Skalarprodukt der beiden Koordinaten
 
@@ -266,7 +266,7 @@ Distanz zu einem Trainingspunkt, desto mehr Einfluss auf die Klassifizierung. $$
 Das Gamma entspricht einem exponentiellen Decay (Verfall) der
 skalierten [Euclidiean Distance or $L^2$-Norm][] zwischen $\vec{x} \text{und} \vec{y}$
 
-![Example RBF Kernel\label{rbfkernel}](images/rbfkernel.png){width=50%}
+![Example RBF Kernel\label{rbfkernel}](images/rbfkernel.png){width=60%}
 
 $f$ in \ref{rbfkernel} entspricht der Ableitung. Die Taylorentwicklung ist eine unendliche lange
 Approximation von $e^{xy}$
@@ -283,20 +283,20 @@ der *Lagrange Methode* erreicht.
 
 Siehe auch IMATH-stuff.
 
-![Lagrange Method](images/lagrangemethod.png){width=40%}
+![Lagrange Method](images/lagrangemethod.png){width=60%}
 
 ### Lagrange Transformation
 
 Wir berechnen die partiellen Ableitungen mit $w$, $b$ und $a_i$. Eine Einschränkung ist, dass alle
 partiellen Ableitungen gleich null sind.
 
-![Lagrange Transformation](images/lagrangetransformation.png){width=40%}
+![Lagrange Transformation](images/lagrangetransformation.png){width=60%}
 
-![Partial Derivatives of Lagrange Formulation](images/partiallagrange.png){width=40%}
+![Partial Derivatives of Lagrange Formulation](images/partiallagrange.png){width=60%}
 
-![Towards the Dual Problem Formulation](images/partiallagrange2.png){width=40%}
+![Towards the Dual Problem Formulation](images/partiallagrange2.png){width=60%}
 
-![Dual Problem Formulation\label{kernelsvm}](images/partiallagrange3.png){width=40%}
+![Dual Problem Formulation\label{kernelsvm}](images/partiallagrange3.png){width=60%}
 
 ### Kernel Hard-Margin SVM
 
@@ -304,17 +304,23 @@ Als Skalarprodukt in \ref{kernelsvm} kann nun ein beliebiger Kernel eingefügt w
 Hyperparameter Optimierung eruieren. Anstatt das primale Problem zu minimieren, *maximieren* wir
 die Lagrange-Dual-Funktion. Zur Klassifizierungszeit verwenden wir
 
-![Kernel Hard-Margin SVM](images/kernelhardmarginsvm.png){width=40%}
+![Kernel Hard-Margin SVM](images/kernelhardmarginsvm.png){width=60%}
 
 $K$ entspricht einem Kernel. Das Resultat ist eine Zahl (Similarität im höheren Raum).
 
 Zur Klassifizierungszeit wird der Karsupel nicht mehr benötigt.
 
-![Kernel Hard-Margin SVM at Classification Time](images/classtime.png){width=40%}
+![Kernel Hard-Margin SVM at Classification Time](images/classtime.png){width=60%}
 
 Trainingssamples werden nicht mehr benötigt.
 
-### API Check
+## Summary
+
+* SVM sind bei der Klassifizierung ziemlich effizient, weil fast nur ein Skalarprodukt berechnet werden muss
+* Sind stabil gegenüber Outliers
+* Kernels projizieren zwei Datenpunkte in einen höheren Dimensionalen Raum und geben Similarität zurück, ohne die Projektion effektiv auszuführen
+
+## API Check
 
 `sklearn.svm.SVC(*, C=1.0, kernel='rbf', degree=3, gamma='scale', coef0=0.0,...)`
 

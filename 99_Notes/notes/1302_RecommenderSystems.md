@@ -91,7 +91,7 @@ personalisiert.
 Man muss Kontext für Empfehlungen schaffen, nicht nur beliebtestes Produkt anzeigen (Glace / Ketchup
 Problem). Man sollte also nur passende Artikel angezeigt erhalten. Hybridisierung nutzen!
 
-### Computing Associations
+#### Computing Associations
 
 Bedingte Wahrscheinlichkeitsverteilung. Siehe [Association Rules for Market Basket Analysis][]
 Funktioniert mit zwei Produkte gerade noch.
@@ -105,8 +105,10 @@ $$ \frac{X and Y}{X} : \frac{\lnot X and Y}{\lnot X} $$
 1. Einfach, schnell und billig
 1. Assoziationen benötigen Kontext
 1. Assoziationen können eingeschränkt werden (z.B. Zeitperiode)
-1. sind nicht personalisiert. Assoziationen schauen nur in Warenkörbe und nicht in Individuen,
-   machen Durchschnittsaussage. Nicht anwendbar auf persönliche Preferenzen.
+1. sind nicht personalisiert. 
+1. Assoziationen schauen nur in Warenkörbe und nicht in Individuen,
+   machen Durchschnittsaussage. 
+1. Nicht anwendbar auf persönliche Preferenzen.
 
 Kann gut als *Cold Start* für neue Kunden verwendet werden.
 
@@ -114,10 +116,19 @@ Kann gut als *Cold Start* für neue Kunden verwendet werden.
 
 Explizite Daten, wenn Kunde etwas bewertet oder selbst eine Intressensliste ausfüllt.
 
+* Geburtsdatum
+* Sprache
+* Rating
+* like/dislike
+
 Implizite Daten (wenn Kunde Datenpreisgabe nicht bewusst ist) wie Aktionen (clicks, kaufen, page
 views (auch über Zeit), Mausposition, Merkzettel/Wunschliste).
 
+* Suche
+* Loginzeit/standort
+
 ### Content-Based Recommendations
+
 Sind personalisiert!
 
 1. Erzeuge Attributkatalog
@@ -142,21 +153,25 @@ Produkt.
    alle anderen zu komprimitieren). Das Benutzerprofil wird aus eigens generierten Daten erzeugt.
    Könnte neue Erkenntnisse hervorbringen
 1. Kein New Item Cold Start Problem, die Similarität (Benutzerunabhängig) kann aus den bisherigen
-   Produkten berechnet werden (nicht Ratings abhängig)
+   Produkten berechnet werden (nicht Ratings abhängig), somit auch Anonymen Benutzer empfehlbare Produkte
 1. Beschränkte Content Analyse möglich, reflektieren Produktattribute wirklich Interessen der Kunden
 1. Überspezialisierung - wenn man immer nur gleiche Marke auf Autoplattform ansieht, bekommt man nur
    diese Marke angezeigt
+1. Nur für homogene Produktkataloge geeignet
 1. New User Cold Start Problem noch immer ungelöst
 
-### User-to-User Collaborative Filtering
+### Collaborative Filtering
+
+Es gibt zwei Varianten.
+
+#### User-to-User Collaborative Filtering
 
 Digitalisierte Mund-zu-Mund Propaganda.
 
 Es werden Profile verwendet, die sehr ähnlich sind. Es werden die Produkte präsentiert, die die
 anderen Kunden gekauft haben, aber der Nutzer nicht.
 
-Produktattribute werden sind mehr nötig und können generischer eingesetzt werden. Funktioniert aber
-nur bei gleichen Produkttypen (Auto, Bücher, Kleider - bei Amazon funktioniert es nicht).
+Produktattribute werden sind mehr nötig und können generischer eingesetzt werden. 
 
 ![User-to-User Collaborative Filtering](images/u2u-collab-filter.png){width=60%}
 
@@ -164,7 +179,7 @@ Die Similarität wird über die Kunden berechnet.
 
 ![User-to-User Collaborative Filtering Calculation](images/u2u-collab-calc.png){width=80%}
 
-### Item-to-Item Collaborative Filtering
+#### Item-to-Item Collaborative Filtering
 
 Weil Userprofile sich ständig verändern, kann man nicht auf Pre-Computation setzen. Bei den
 Produktpaare ist die Similarität aber stabil und kann im voraus berechnet werden. Amazon hat dazu
@@ -185,6 +200,8 @@ collab filtering sind nur die User Ratings in die Rechnung involviert.
 1. New Item aka. Cold Start Problem - viele User müssen das neue Item erst bewerten, bevor sie
    empfohlen werden können
 1. Grey Shep Problem - Benutzer mit unüblichen Vorlieben erhalten keine guten Vorschläge
+1. Minimales Domainwissen nötig
+1. Hyperparameteroptimierung nötig
 
 ### Matrix Factorization Techniques
 

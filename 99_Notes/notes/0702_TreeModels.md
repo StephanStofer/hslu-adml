@@ -10,7 +10,7 @@ Klassifikationsproblem.
 
 Features können sein, Dauer seit dem letzten Kauf des Produktes, gab es Rabatt oder Wochentag des
 Kaufs. Der Algorithmus wählt die Features selber. Gleiche Variablen und Wertesplits siehe
-ref{decisiontree} können unterschiedliche Ausprägungen haben.
+\ref{decisiontree} können unterschiedliche Ausprägungen haben.
 
 ![Decision Tree Example\label{decisiontree}](images/decisiontree.png){width=50%}
 

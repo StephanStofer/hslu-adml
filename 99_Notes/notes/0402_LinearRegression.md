@@ -21,7 +21,9 @@ Aber wie finden wir die die Parameter $\theta_0$ und $\theta_1$? **Supervised Le
 
 ### Terminology
 
-![Terminology in linear Regression](images/terminology.png){width=50%}
+$\theta_0$ ist der Bias Term bzw. entspricht der Achsenverschiebung. $\theta_0$ hat kein Einfluss auf over-/underfitting.
+
+![Terminology in linear Regression](images/terminology.png){width=70%}
 
 ### Selecting the Regression Parameters
 
@@ -121,19 +123,19 @@ Wenn wir mehr als ein Feature in einem $N$-Dimensionalen Raum betrachten.
 
 Ordinary Least Squares Regressor.
 
-![OLS - M Regressors](images/ols-mregressors.png){width=50%}
+![OLS - M Regressors](images/ols-mregressors.png){width=70%}
 
 ### Nonlinear Regression
 
 Nicht-lineare Regression.
 
-![Nonlinear Regression](images/nonlinearregression.png){width=50%}
+![Nonlinear Regression](images/nonlinearregression.png){width=70%}
 
 ### Regularization
 
 Wenn wir mehr Extra-Features haben, um unsere Trainingsdaten fitten, kann das Model overfitten.
 Overfitting führt zu Generalisierungsfehler, wenn neue Daten kommen. Wir müssen uns auf die Feature
-fokusieren, welche die grösste *erklärende Macht* haben. Dies ist Regularisierung.
+fokussieren, welche die grösste *erklärende Macht* haben. Dies ist Regularisierung.
 
 #### Ridge and LASSO
 
@@ -146,6 +148,6 @@ unwichtigen Features weniger zu gewichten.
 
 #### Regularization Parameter $\lambda$
 
-Grosse Parameter werden bestraft. Hat Effekt, dass nur die wichtigen Features die Regression
+Grosse (komplexe) Parameter werden bestraft (Penalty). Hat Effekt, dass nur die wichtigen Features die Regression
 steuern. Weniger relevante Features werden unterdrückt. Kontrolle über den *
-Regularisierungsparameter* $\lambda$
+Regularisierungsparameter* $\lambda$. Wird $\lambda$ zu gross gewählt, kann das Modell underfitten.

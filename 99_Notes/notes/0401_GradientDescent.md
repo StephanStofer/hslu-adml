@@ -41,7 +41,7 @@ Starte irgendwo und bewege dich *entgegen* des Gradienten. In Pseudocode:
 1. go back to first step, iterate until arriving at the local minimum
 
 Die Step-Grösse $\alpha$ bestimmt die Geschwindigkeit der *Konvergenz*. Die Daten müssen vorher **
-normalisiert** werden.
+normalisiert** werden. Skalenwerte der Plots beachten! Falls Skalen bereits identisch, kann $\alpha$ optimiert werden.
 
 ### The Math Behind
 
@@ -77,8 +77,7 @@ ausgewählt.
 In der Abbildung \ref{convergencegradient} erkennt man klar die Unterschiede der Konvergenz der
 beiden Verfahren.
 
-![Convergence of Gradient Descent\label{convergencegradient}](images/convergence_gradientdescent.png)
-{width=70%}
+![Convergence of Gradient Descent\label{convergencegradient}](images/convergence_gradientdescent.png){width=70%}
 
 ### Batch vs. Stochastic Gradient Descent
 

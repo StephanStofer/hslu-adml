@@ -1,6 +1,36 @@
 # Machine Learning Fundamentals
 
-Grundlagen des ML
+Grundlagen des ML.
+
+## Machine Learning Disciplines
+
+Es gibt mehrere ML-Disziplinen.
+
+### Supervised Machine Learning
+
+Annotierte Daten vorliegend, Domänenexperte definiert was richtig/falsch ist, bzw. zeigt Weg auf was
+gelernt werden soll.
+
+* Medical image analysis for detection of skin diseases based on human expert markings
+* Calculating product recommendations from 5-star ratings
+* Prediction of selling prices for the real estate market
+* Detecting animals on high-resolution photographs
+
+### Unsupervised Machine Learning
+
+Netzwerk lernt selber die relevanten Features.
+
+* Identifying target groups for marketing campaigns using clustering techniques
+* Market basket analysis using association rules
+* Search query analysis for e-commerce by semantic clustering
+* Dimensionality reduction for data visualization
+* Identifying most-valuable customers on e-commerce platforms using transactions and tracking data
+
+### Reinforcement Machine Learning
+
+Aktor führt Ergebnisse in Feedbackloop zurück, um Ziel näher zu kommen.
+
+* Learning to play Jass by self-play
 
 ## Vector Space Model
 
@@ -39,7 +69,9 @@ Beispiele für Distanz und Similarität sind:
 * Auto-Verkaufsseite schlägt Preis für Auto anhand der 20 letzten Verkäufe dieses Modells vor
 * Webshop empfiehlt Produkte anhand ähnlicher Warenkörbe anderer Benutzer
 
-Wir brauchen also einen Weg die Distanz/Similarität aussagekräftig zu berechnen.
+Wir brauchen also einen Weg die Distanz/Similarität aussagekräftig zu berechnen. Auch für
+kategorische Werte können Similaritäten berechnet werden, vorausgesetzt sie liegen in
+einem [Vector Space Model][] vor.
 
 ## Euclidiean Distance or $L^2$-Norm
 
@@ -48,7 +80,8 @@ Dimensionen verwendet werden kann. Ist eine Zahl zwischen $[\,0,\infty[\,$ finde
 ähnlichsten Punkt durch die *Minimierung der Distanz* zwischen zwei Punkten. Die Euklidische Distanz
 wird auch $L^2$-Norm genannt.
 
-$$euclid(X,Y)= \|X-Y\|_{2} = \sqrt{\sum_{i=1}^n(x_i-y_i)^2}=\sqrt{\sum_{i=1}^n x_i^2-2x_iy_i+y_i^2}$$
+$$euclid(X,Y)= \|X-Y\|_{2} = \sqrt{\sum_{i=1}^n(x_i-y_i)^2}=\sqrt{\sum_{i=1}^n
+x_i^2-2x_iy_i+y_i^2}$$
 
 ## Semantik of Similarity
 
@@ -72,7 +105,8 @@ Kosinus liegt zwischen $[\,-1,1]\,$. Für die Distanz verwenden wir aber einen p
 weshalb wir den Betrag nehmen. Damit wird Kosinus Similarität berechnet. $0$ bedeutet kleinste
 Distanz - maximale Similarität und 1 grösste Distanz - Dissimilarität.
 
-$$cos(X,Y)= \frac{X,Y}{\|X\|_{2} * \|Y\|_{2}} = \frac{\sum_{i=1}^n(x_i y_i)}{\sqrt{\sum_{i=1}^n x_i^2} \sqrt{\sum_{i=1}^n y_i^2}}$$
+$$cos(X,Y)= \frac{X,Y}{\|X\|_{2} * \|Y\|_{2}} = \frac{\sum_{i=1}^n(x_i y_i)}{\sqrt{\sum_{i=1}^n
+x_i^2} \sqrt{\sum_{i=1}^n y_i^2}}$$
 
 $$\text{Kosinusdistanz}=1-\text{Kosinus Similarität}$$
 
@@ -188,11 +222,11 @@ df[df.columns] = scaler.inverse_transform(df) print(df.head())
 ## K-Nearest Neighbors Classification (k-NN)
 
 Ist wahrscheinlich der einfachste ML-A. Ist ein Verfahren für Regression und Klassifizierung. Zeigt
-auf, wie wichtig Distanz bzw. Similarität für ML ist. K-Nearest Neighbors muss ein 
-definierter Parameter $k$ mitgegeben werden. $k=3$ bedeutet, dass K-Nearest die drei nächsten Punkte
-zu einem neuen Punkt sucht und anhand deren Eigenschaften klassifiziert wird. k-NN
-mit $k=1$ wird einfach das Label des nahesten Punktes übernommen. Bei $k>1$ wird ein
-Mehrheitsvoting gegenüber den $k$-nahesten Punkte gemacht.
+auf, wie wichtig Distanz bzw. Similarität für ML ist. K-Nearest Neighbors muss ein definierter
+Parameter $k$ mitgegeben werden. $k=3$ bedeutet, dass K-Nearest die drei nächsten Punkte zu einem
+neuen Punkt sucht und anhand deren Eigenschaften klassifiziert wird. k-NN mit $k=1$ wird einfach das
+Label des nahesten Punktes übernommen. Bei $k>1$ wird ein Mehrheitsvoting gegenüber den $k$-nahesten
+Punkte gemacht.
 
 ![K-Nearest Neighbors Classification](images/knn-classification.png){width=80%}
 
@@ -206,14 +240,14 @@ Punkte. Funktionsweise mit Parameter $k$ analog k-NN-Klassifizierung.
 ## Hyperparameter
 
 Der Wert von $k$ wird Hyperparameter genannt und entspricht der Anzahl Nachbarn. Das Resultat kann
-stark vom gewählten $k$ differieren. Es ist also wichtig, dieses möglichst optimal zu wählen (es gibt
-keine Optimierungsmöglichkeit durch einen Computer). Als weiteren Paramter kann eine Konstante zur 
-Distanz-/Similaritätmethode übergeben werden.
+stark vom gewählten $k$ differieren. Es ist also wichtig, dieses möglichst optimal zu wählen (es
+gibt keine Optimierungsmöglichkeit durch einen Computer). Als weiteren Paramter kann eine Konstante
+zur Distanz-/Similaritätmethode übergeben werden.
 
 ## Facts on K-Nearest Neighbors
 
-* Sehr langsam, weil jedesmal Similarität zu allen Punkten berechnet wird. Danach die Distanz berechnet
-  und nahesten ausgewählt. Dies wird bei jedem Datenpunkt gemacht.
+* Sehr langsam, weil jedesmal Similarität zu allen Punkten berechnet wird. Danach die Distanz
+  berechnet und nahesten ausgewählt. Dies wird bei jedem Datenpunkt gemacht.
 * Für kleines Dataset gute Baseline, legt Massstäbe fest für andere Algos
 * Mehrheitswahl bedeutet alle Nachbarn sind gleich stimmberechtigt, egal wie weit sie entfernt
   liegen.

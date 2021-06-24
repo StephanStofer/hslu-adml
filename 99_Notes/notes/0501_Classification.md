@@ -195,11 +195,15 @@ True-Positive Rate* oder *Recall* genannt.
 
 $$\text{Sensitivity}=\frac{TP}{TP+FN}$$
 
+Anzahl wahren **YES** geteilt durch alle **YES**. 
+
 #### Specificity - Performance on NO Instances
 
 Die Genauigkeit misst wie oft das Modell **NO** voraussagt, im Verhältnis zum wahren **NO**.
 
-$$\text{Specificity}=\frac{TP}{TN+FP}$$
+$$\text{Specificity}=\frac{TN}{TN+FP}$$
+
+Anzahl wahren **NO** geteilt durch alle **NO**.
 
 #### Precision - If True Negatives not Available
 
@@ -207,6 +211,12 @@ Manchmal sind keine True Negatives vorhanden, dann nutzen wir Precision. Das Mod
 voraus, wie oft ist das korrekt.
 
 $$\text{Precision}=\frac{TP}{TP+FP}$$
+
+#### Accuracy
+
+$$\text{Accuracy}=\frac{TN+TP}{TN+TP+FN+FP}$$
+
+Anzahl korrekter Voraussagen geteilt durch alle voraussagen.
 
 #### F1 Score
 
