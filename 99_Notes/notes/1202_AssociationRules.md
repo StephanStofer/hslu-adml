@@ -7,11 +7,12 @@ Transaktionsdaten in Binärer Form.
 
 ## Association Rules
 
-Associationsregel implizieren X sodass Y. Dies wird dann auf ein beliebiges Set angewendet.
+Associationsregel implizieren X so, dass Y ist. Dies wird dann auf ein beliebiges Set 
+angewendet.
 
 ### Support of a Set of Items
 
-Support ist ein Teil einer Tranaktion, welche ein spezifisches Set an Items beinhaltet. Misst wie
+Support ist ein Teil einer Transaktion, welche ein spezifisches Set an Items beinhaltet. Misst wie
 oft Items zusammen gekauft werden. $$support({i_1,...,i_n})=\frac{\#purchases of
 \{i_1,...,i_n\}}{\#transactions}$$
 
@@ -56,11 +57,12 @@ Der Diamant wird traversiert und da wo der Support nicht erreicht wird, abgeschn
 
 Wir haben Regeln, die den Support und deren Güte bewertet. Wird ein Produkt sehr oft
 gekauft (Bananen) und ein anderes (Anchovy Paste) sehr wenig, kann die Banane trotzdem überwiegen und
-den Score des Produktpaares erhöhen. Um das zu korrigieren gibt es einen *Lift*.
+den Score des Produktpaares erhöhen. Um dies zu Korrigieren gibt es einen *Lift*.
 
 ### Lift of an Association Rule
 
-Definiert durch $$lift(X\rightarrow Y) = \frac{X \cup Y}{support(X)*support(Y)}$$
+Definiert durch $$lift(X\rightarrow Y) = \frac{support(X \cup Y}{support(X)*support(Y)} = \frac{X 
+\cup Y}{support(X)*support(Y)}$$
 
 Der Lift kann höher als 1 sein und ist statistisch unabhängig.
 
@@ -88,7 +90,7 @@ Wenn zwei Produkte oft miteinander gekauft werden, könnten folgende Überlegung
 
 ### Limitations of Apriori and Alternatives
 
-Apriori ist langsam für grosse Daten. Frequent Pattern-Growth sollte verwendet werden.
+Apriori ist langsam für grosse Daten. Frequent Pattern-Growth (FP-Growth) sollte verwendet werden.
 
 ## API Check
 
