@@ -11,6 +11,7 @@ numbersections: true
 title: Advanced Machine Learning
 subtitle: Zusammenfassung
 author: Stephan Stofer
+thanks:  Danke an Oliver Amstutz für das Korrekturlesen der ML-Kapitel. Sämtliche Bilder stammen aus den Vorlesungsfolien von Donnacha Daly und Marc Pouly.
 date: \today
 toc: true
 lof: true
