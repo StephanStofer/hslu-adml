@@ -8,6 +8,8 @@ machen.
 Für einen K-Means müssen die Daten in einem Vector Space Model vorliegen. Oft eingesetzt in
 Zielgruppenmarketing (Tracking) oder Auswertung in einem Contest. Skaliert gut.
 
+**Wichtig: Datenpunkte müssen normiert sein!**
+
 ### Cluster
 
 Bestehen aus Zuordnung der Werte in einem VSM in Gruppen (Kategorien).
@@ -18,9 +20,10 @@ Man wählt die Anzahl Clusters $k$, entspricht also einem Hyperparameter. Für j
 eine Zahl generiert und in die Datenwolke eingefügt. Diese Punkte entsprechen den Clusterzentren.
 Danach:
 
-1. Suche für jeden Punkt den nahsten Cluster (Punkte werden Zentren zugeordnet)
-1. Zentrum wird angepasst, mit Durchschnittswert aus allen Punkten neu bestimmt
-1. Iteriere durch 1 und 2 bis sich Lage stabilisiert (Zentren nicht mehr verschieben), bis
+1. Suche für jeden Punkt den nächsten (euklidische Distanz) Cluster (Punkte werden Zentren 
+   zugeordnet)
+2. Zentrum wird angepasst, mit Mittelwert aus allen Punkten neu bestimmt
+3. Iteriere durch 1 und 2 bis sich Lage stabilisiert (Zentren nicht mehr verschieben), bis
    konvergiert
 
 ![k-Means Algorithm in Math](images/kmeans.png){width=60%}
@@ -38,8 +41,8 @@ $$\frac{1}{n}\sum_{i=1}^n ||x_i - \mu_{c_i}||^2$$
 #### Convergence and Optimality
 
 $k$-Means **approximiert** die optimale Lösung und **konvergiert immer**. Findet aber nicht zwingend
-das globale sondern nur lokale Minimum. Sklearn ruft intern k-Means 10 mal auf und retourniert das
-Clustering mit dem minimalen Distortion.
+das globale, sondern nur lokale Minimum. Sklearn ruft per default k-Means 10 mal auf und 
+retourniert das Clustering mit dem minimalen Distortion.
 
 #### Choose the number of Clusters
 
@@ -63,12 +66,17 @@ und die zwei nächsten Clusters mergen (zusammenführen). Dies wiederholen bis S
 Hat drei Konfigurationsoptionen:
 
 1. Distanzmass: kann jedes Distanz- oder Similaritätsmass einsetzen
-1. Linkage: Verschmelzung der Endpunkte
-1. Stopkriterium: Threshold auf Anzahl Clusters, Cluster-Dichte, usw.
+2. Linkage: Verschmelzung der Endpunkte
+3. Stopkriterium: Threshold auf Anzahl Clusters, Cluster-Dichte, usw.
 
 ### End-Points for Distance Measurement
 
-Es gibt verschiedene Varianten um die Endpunkte (Clusterzentruen) zu berechenen, die für die
+Es gibt verschiedene Varianten (simple link = min dist., complete link = max dist., average link 
+= dist. zw. cluster zentren, ward link = min. varianz innerhalb der cluster+ max varianz 
+zwischen den cluster)
+um die 
+Endpunkte (Clusterzentren)
+zu berechnen, die für die
 Verschmelzung verwendet werden. Ist vom Distanzmass unabhängig.
 
 ![Distance Measurement für End-Points\label{endpoint}](images/endpointdistancemeasurement.png){width=50%}
@@ -85,7 +93,8 @@ Elbow-Method eruiert werden.
 
 ### $k$-Means $\neq$ Agglomerative Clustering
 
-In $k$-Means kann in jedem Schritt ein Datenpunkt den Cluster "wechseln". Im Agglomerative Clustering
+In $k$-Means kann in jedem Schritt ein Datenpunkt den Cluster "wechseln". Im agglomerativen 
+Clustering
 verbleibt er immer im Gleichen.
 
 * die Anzahl Stopkriterien ist für $k$-Means nur die Anzahl $k$. Im AC können *verschiedene* verwendet
@@ -94,5 +103,5 @@ verbleibt er immer im Gleichen.
   Distanzmass
 * dafür $k$-Means gegenüber allen Datengrössen skaliert und AC nur bei kleineren Datenmengen
 * $k$-Means produziert unterschiedliche Clusters je nach Initialisierung der Zentren, AC ist
-  hingegen deterministisch
+  hingegen vollständig deterministisch
 * $k$-Means schwierig zu interpretieren, bei AC kann mit Hilfe des [Dendrogram][] schön aufgezeigt werden
