@@ -28,7 +28,7 @@ Rating von Benutzer.
 ### $2^{nd}$ Wave
 
 Durch die vermehrte Internetnutzung und durch das Teilen von Informationen auf Social Media
-Plattformen, wurde es immer wichtiger gute Empfehlungn abzugeben. Dies führte zur Netflix Challenge
+Plattformen, wurde es immer wichtiger gute Empfehlung abzugeben. Dies führte zur Netflix Challenge
 
 2006.
 
@@ -73,7 +73,7 @@ sein. Motivation für eigenen Recommender sind
 
 * Daten sollen private bleiben
 * Kosten steigen je erfolgreicher eigenes Produkt
-* Recommendations nicht nur im Webshop sondern überall
+* Recommendations nicht nur im Webshop, sondern überall
 
 ## Recommender Algorithms
 
@@ -83,7 +83,8 @@ individualisierte alle Nutzer die gleichen Empfehlungen.
 ### Scoring and Ranking as Recommendations
 
 Sammlung von Sterne-Ratings, ergibt eine Empfehlung. Das System nimmt Rating, nimmt Mittelwert aller
-Ratings und rundet. Anstatt Rating können auch andere Indikatoren verwendet werden.
+Ratings und rundet. Anstatt Rating können auch andere Indikatoren verwendet werden. Ist nicht 
+personalisiert.
 
 #### Scoring lacks Context
 
@@ -94,6 +95,10 @@ Problem). Man sollte also nur passende Artikel angezeigt erhalten. Hybridisierun
 
 Bedingte Wahrscheinlichkeitsverteilung. Siehe [Association Rules for Market Basket Analysis][]
 Funktioniert mit zwei Produkte gerade noch.
+
+Prüft wie oft X und Y zusammen gekauft wird, aber auch wie oft sie nicht zusammen gekauft werden.
+
+$$ \frac{X and Y}{X} : \frac{\lnot X and Y}{\lnot X} $$ 
 
 #### Advantages and Disadvantages of Associations
 
@@ -113,6 +118,7 @@ Implizite Daten (wenn Kunde Datenpreisgabe nicht bewusst ist) wie Aktionen (clic
 views (auch über Zeit), Mausposition, Merkzettel/Wunschliste).
 
 ### Content-Based Recommendations
+Sind personalisiert!
 
 1. Erzeuge Attributkatalog
 1. Sammeln von Benutzerinteraktionen/Vorlieben
@@ -182,7 +188,7 @@ collab filtering sind nur die User Ratings in die Rechnung involviert.
 
 ### Matrix Factorization Techniques
 
-Eine spärlich besetzte Matrix wird mit einer Faktorisierung in zwei Matrizen tranformiert. Dabei
+Eine spärlich besetzte Matrix wird mit einer Faktorisierung in zwei Matrizen transformiert. Dabei
 wird sie um Dimension $k$ *latent space* erweitert. Beide Matrizen werden so dichter. Die
 Faktorisierung muss die bestmögliche Approximierung der bestehenden Ratings ergeben. Bei der
 Prediction muss dann nur ein Skalarprodukt (eines Eintrags) berechnet werden.
@@ -207,7 +213,8 @@ ob ein Produkt im Lernset (des Users) enthalten war.
 
 Anzahl richtiger Prediction / $k$ ist die Performance
 
-Normalerweise wird aber A/B-Testing verwendet, weil insgesamt P@k kein verlässliche Aussage zulässt.
+Normalerweise wird aber A/B-Testing verwendet, weil insgesamt P@k keine verlässliche Aussage 
+zulässt.
 Man weiss am Ende nicht, wieso der Benutzer das Produkt nicht gekauft hat.
 
 ## API Check
