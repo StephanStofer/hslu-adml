@@ -26,7 +26,7 @@ Features gewählt. Die Performance ist aber nur so gut, wie die von Menschen gew
 
 ### Invariance to Position, Scaling, Rotation
 
-Bilder könenn skaliert, gedreht, usw. werden. Ein Klassifier muss also dasselbe Resultat erziehlen,
+Bilder können skaliert, gedreht, usw. werden. Ein Klassifier muss also dasselbe Resultat erzielen,
 ob das Bild dem Original entspricht oder skaliert wurde.
 
 #### The MNIST Dataset
@@ -39,7 +39,7 @@ Werden für Klassifizierung verwendet.
 
 ### Filter Matrices
 
-Pixelwerte sind im Zusammenhang mit ihren Nachbarn am informativsten. Mit einem Filter, werden diese
+Pixelwerte sind im Zusammenhang mit ihren Nachbarn am informativsten. Mit einem Filter werden diese
 zusammen verarbeitet. Mathematisch benötigt dies viele Operationen, weil die Pixel- und Matrixwerte
 elementweise multipliziert und addiert werden. Manchmal wird zusätzlich eine Aktivierungsfunktion
 genutzt.
@@ -64,9 +64,9 @@ wenige Gewichte in diesem System.
 
 ![Transformation to Convolutional Layers](images/convlayer.png){width=50%}
 
-#### Conv as Neural Nets
+#### Convolutions as Neural Nets
 
-Filtergrösse von 3 weil jeder Layer drei Inputs hat. Conv1D(1,3) bedeutet, dass es ein 1D
+Filtergrösse von 3, weil jeder Layer drei Inputs hat. Conv1D(1,3) bedeutet, dass es ein 1D
 convolutional Layer mit 1 Filter und Filtergrösse 3 ist. Stride ist auch eins, würde separat als
 «Parameter» angegeben.
 
@@ -75,7 +75,7 @@ sind.
 
 ### Pooling
 
-Nachbarpixel sind jeweils sehr ähnlich und auch das convolution von Nachbarspixel würde ähnliche
+Nachbarpixel sind jeweils sehr ähnlich und auch das convolution von Nachbarpixel würde ähnliche
 Pixelwerte ergeben (hohe Redundanz). Wenn wir Objekte entdecken wollen, müssen wir diese aus der
 Distanz betrachten - ein Auto können wir nicht anhand wenige Pixel erkennen.
 
@@ -89,7 +89,7 @@ Pooling bewirkt einem Zoom out Effekt.
 #### Pooling Layers
 
 Pooling dividiert Höhe und Breite durch die Pool Size. Im Bild \ref{poolinglayers} wird die Pool
-Size 2 angewendeet.
+Size 2 angewendet.
 
 ![Pooling Layers\label{poolinglayers}](images/poollayer.png){width=50%}
 
@@ -99,7 +99,7 @@ Size 2 angewendeet.
 
 ### Convolutions on RGB Images
 
-Mit einem 3D-Filter werden die Farbräume zusammengemergt und worin sich die Korrelation zu den
+Mit einem 3D-Filter werden die Farbräume zusammen gemerged und worin sich die Korrelation zu den
 Farben anstatt Farbwerte enthält in 2D. Der 3D Filter enthält 27 Werte (3x3x3). Der Filter wird über
 Bild gelegt und jeder überdeckte Punkt (27 Stk.) wird mit dem Filter multipliziert und danach
 aufaddiert. Dies ist der neue Wert. Der Filter wird über das ganze Bild verschoben und jeweils neu
@@ -111,7 +111,7 @@ Das Resultat ist ein 2D mit Werten der Korrelationen.
 
 ### Computer Vision Disciplines
 
-Nicht nur was sondern auch *wo* ist das Objekt!
+Nicht nur was, sondern auch *wo* ist das Objekt!
 Reihenfolge nach Schwierigkeit links oben, rechts oben, links unten, recht unten.
 
 Bei Segmentierung wird jeder Pixelpunkt zugeordnet.
