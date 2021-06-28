@@ -32,20 +32,20 @@ Code|Parameters|Description
 
 ## Sklearn
 
-Code|Parameters|Description
----|---|---
-`sklearn.neighbors.KNeighborsRegressor()`|weights=Gewichtung der $k$-nahesten Datenpunkte, metric=Distancemetric|K-NN Regression
-`train_test_split(X,y, test_size=0.2,random_state=42)`|*X & y* must have the same size, *
+Code | Parameters | Description
+--- |--- | ---
+`sklearn.neighbors.KNeighborsRegressor()` | weights=Gewichtung der $k$-nahesten Datenpunkte, metric=Distancemetric | K-NN Regression
+`train_test_split(X,y, test_size=0.2,random_state=42)` | *X & y* must have the same size, *
 
 test_size* represent the proportion of the dataset, *
-randsom_state* controls the shuffling applied - with an int output is reproducible|Split arrays or
+random_state* controls the shuffling applied - with an int output is reproducible|Split arrays or
 matrices into random train and test subsets. Returns for each array **
 two** lists with a train and test set
-`DummyRegressor()`|*
+`DummyRegressor()` | *
 strategy* with options {mean, median, quantile, constant}|instantiate a DummyRegressor to get an
 idea how good our model performs.
-`sklearn.cluster.KMeans`|n_clusters, init (strategy for initialization), n_init (how many times
+`sklearn.cluster.KMeans` | n_clusters, init (strategy for initialization), n_init (how many times
 k-means is executed)|führt k-Means n mal aus
-`sklearn.cluster.AgglomerativeClustering`|n_clusters (None wenn anderes Stopkriterium), affinity (
-Distance Measure), linkage (linkage strategy)|---
+`sklearn.cluster.AgglomerativeClustering`| n_clusters (None wenn anderes Stopkriterium), affinity (
+Distance Measure), linkage (linkage strategy) | ---
 

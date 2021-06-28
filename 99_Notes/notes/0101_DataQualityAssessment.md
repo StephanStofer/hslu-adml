@@ -1,3 +1,5 @@
+Sämtliche Bilder stammen aus den Vorlesungsfolien von Donnacha Daly und Marc Pouly.
+
 # Data Classification
 Daten werden in zwei Klassen unterteilt. *Numerische* und *kategorische* Daten. Bei numerische Daten gibt es *stetige* oder *diskrete* Zahlen. Bei Kategorischen sind entweder *ordinal* oder *nominal*. Ordinale haben eine Hierarchie.
 
